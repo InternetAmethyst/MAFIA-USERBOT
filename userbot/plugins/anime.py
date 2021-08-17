@@ -1,9 +1,9 @@
 import re
 
-from speedobot import bot
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from speedobot.cmdhelp import CmdHelp
-from speedobot.helpers.functions import deEmojify
+from Speedo import bot
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.cmdhelp import CmdHelp
+from Speedo.helpers.functions import deEmojify
 
 
 @bot.on(admin_cmd(pattern="anime(?: |$)(.*)"))

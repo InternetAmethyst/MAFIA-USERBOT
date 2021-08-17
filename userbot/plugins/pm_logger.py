@@ -11,7 +11,7 @@ from telethon import events
 
 from Speedo import BOTLOG, BOTLOG_CHATID, bot
 from Speedo.Config import Config
-from speedobot.utils import admin_cmd, register
+from Speedo.utils import admin_cmd, register
 from Speedo.cmdhelp import CmdHelp
 
 logging.basicConfig(

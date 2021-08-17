@@ -1,4 +1,4 @@
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 

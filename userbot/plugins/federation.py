@@ -9,7 +9,7 @@ from telethon.errors import ChatAdminRequiredError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.users import GetFullUserRequest
 
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo import ALIVE_NAME
 from Speedo.cmdhelp import CmdHelp
 

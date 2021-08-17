@@ -13,7 +13,7 @@ from requests import get
 from Speedo.cmdhelp import CmdHelp
 
 from Speedo import *
-from speedobot.utils import *
+from Speedo.utils import *
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (

@@ -5,18 +5,18 @@ from pathlib import Path
 from telethon import events
 from telethon import functions, types
 from telethon.tl.types import InputMessagesFilterDocument
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo import *
-from Speedo import bot as speedobot
+from Speedo import bot as Speedo
 
 DELETE_TIMEOUT = 5
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
-speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
-h1m4n5hu0p = speedobot.uid
+speedo_logo = "./H1M4N5HU0P/Speedo_logo.jpg"
+h1m4n5hu0p = Speedo.uid
 speedo = f"[{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
 
-@speedobot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
-@speedobot.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@Speedo.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
@@ -39,8 +39,8 @@ async def send(event):
     else:
         await edit_or_reply(event, "File not found..... Kek")
 
-@speedobot.on(admin_cmd(pattern="install$", outgoing=True))
-@speedobot.on(sudo_cmd(pattern="install$", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="install$", outgoing=True))
+@Speedo.on(sudo_cmd(pattern="install$", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
@@ -80,8 +80,8 @@ async def install(event):
             await event.edit(f"**Failed to Install** \n`Error`\n{str(e)}")
             return os.remove(downloaded_file_name)
     
-@speedobot.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
-@speedobot.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
+@Speedo.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
 async def uninstall(h1m4n5hu0p):
     if h1m4n5hu0p.fwd_from:
         return
@@ -94,8 +94,8 @@ async def uninstall(h1m4n5hu0p):
     except OSError as e:
         await h1m4n5hu0p.edit("Error: %s : %s" % (dir_path, e.strerror))
 
-@speedobot.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
-@speedobot.on(sudo_cmd(pattern=r"upload (?P<shortname>\w+)$", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@Speedo.on(sudo_cmd(pattern=r"upload (?P<shortname>\w+)$", allow_sudo=True))
 async def unload(event):
     if event.fwd_from:
         return
@@ -111,8 +111,8 @@ async def unload(event):
         )
 
 
-@speedobot.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
-@speedobot.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@Speedo.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
 async def load(event):
     if event.fwd_from:
         return
@@ -140,5 +140,5 @@ CmdHelp("core").add_command(
 ).add_command(
   "send", "<file name>", "Sends the given file from your Speedo server, if any.", "send alive"
 ).add_command(
-  "cmds", None, "Gives out the list of modules in speedobot."
+  "cmds", None, "Gives out the list of modules in Speedo."
 ).add()

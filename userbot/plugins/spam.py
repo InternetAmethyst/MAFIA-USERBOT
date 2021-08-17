@@ -11,9 +11,9 @@ import os
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
-from speedobot.Config import Config
+from Speedo.Config import Config
 
 LOGGER = Config.PLUGIN_CHANNEL
 SUDO_WALA = Config.SUDO_USERS
@@ -38,9 +38,9 @@ async def spammer(e):
 async def bigspam(speedo):
     if not speedo.text[0].isalpha() and speedo.text[0] not in ("/", "#", "@", "!"):
         speedo_msg = speedo.text
-        speedobot_count = int(speedo_msg[9:13])
+        Speedo_count = int(speedo_msg[9:13])
         speedo_spam = str(speedo.text[13:])
-        for i in range(1, speedobot_count):
+        for i in range(1, Speedo_count):
             await speedo.respond(speedo_spam)
         await speedo.delete()
         if LOGGER:
@@ -101,5 +101,5 @@ CmdHelp("spam").add_command(
 ).add_command(
   "dspam", "<delay> <spam count> <text>", "Sends the text 'X' number of times in 'Y' seconds of delay", ".dspam 5 100 Hello"
 ).add_command(
-  "bigspam", "<count> <text>", "Sends the text 'X' number of times. This what speedobot iz known for. The Best BigSpam Ever", ".bigspam 5000 Hello"
+  "bigspam", "<count> <text>", "Sends the text 'X' number of times. This what Speedo iz known for. The Best BigSpam Ever", ".bigspam 5000 Hello"
 ).add()

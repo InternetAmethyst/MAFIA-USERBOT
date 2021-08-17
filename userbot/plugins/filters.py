@@ -7,7 +7,7 @@ import asyncio
 import re
 from telethon import events, utils
 from telethon.tl import types
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 from Speedo.plugins.sql_helper.filter_sql import get_filter, add_filter, remove_filter, get_all_filters, remove_all_filters
 

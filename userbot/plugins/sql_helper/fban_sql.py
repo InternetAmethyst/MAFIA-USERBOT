@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from speedobot.plugins.sql_helper import SESSION, BASE
+from Speedo.plugins.sql_helper import SESSION, BASE
 
 
 class fban(BASE):

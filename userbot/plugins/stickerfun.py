@@ -8,7 +8,7 @@ from telethon.tl.types import InputMessagesFilterDocument
 
 from Speedo import bot
 from Speedo.helpers.functions import deEmojify
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 # RegEx by https://t.me/c/1220993104/50065
@@ -82,7 +82,7 @@ async def sticklet(event):
         ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
     )
     image_stream = io.BytesIO()
-    image_stream.name = "speedobot.webp"
+    image_stream.name = "Speedo.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
     # finally, reply the sticker

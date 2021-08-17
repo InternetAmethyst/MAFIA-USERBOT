@@ -11,7 +11,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from Speedo.plugins.sql_helper import pmpermit_sql as pmpermit_sql
 from Speedo import ALIVE_NAME, CUSTOM_PMPERMIT, MAFIA_ID
 from Speedo.Config import Config
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 from Speedo.cmdhelp import CmdHelp
 
 PM_TRUE_FALSE = Config.PM_DATA

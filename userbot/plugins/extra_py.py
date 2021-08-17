@@ -3,7 +3,7 @@ from pathlib import Path
 
 from telethon.tl.types import InputMessagesFilterDocument
 
-from speedobot.utils import admin_cmd, load_module
+from Speedo.utils import admin_cmd, load_module
 from var import Var
 from Speedo.cmdhelp import CmdHelp
 

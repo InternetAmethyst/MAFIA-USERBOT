@@ -5,7 +5,7 @@ import sys
 import git
 
 from Speedo.Config import Config
-from speedobot.utils import admin_cmd, sudo_cmd
+from Speedo.utils import admin_cmd, sudo_cmd
 
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (

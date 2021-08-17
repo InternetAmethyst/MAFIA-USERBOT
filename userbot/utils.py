@@ -66,13 +66,13 @@ def load_module(shortname):
         sys.modules["uniborg.util"] = Speedo.utils
         mod.Config = Config
         mod.borg = bot
-        mod.speedobot = bot
+        mod.Speedo = bot
         mod.edit_or_reply = edit_or_reply
         mod.delete_speedo = delete_speedo
         mod.media_type = media_type
-        # support for speedobot originals
-        sys.modules["speedobot.utils"] = Speedo.utils
-        sys.modules["speedobot"] = Speedo
+        # support for Speedo originals
+        sys.modules["Speedo.utils"] = Speedo.utils
+        sys.modules["Speedo"] = Speedo
         # support for paperplaneextended
         sys.modules["Speedo.events"] = Speedo.utils
         spec.loader.exec_module(mod)

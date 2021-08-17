@@ -6,8 +6,8 @@ from typing import Optional, Tuple
 from PIL import Image, ImageDraw, ImageFont
 import PIL.ImageOps
 
-from speedobot.utils import admin_cmd, sudo_cmd
-from Speedo import CmdHelp, CMD_HELP, LOGS, bot as speedobot
+from Speedo.utils import admin_cmd, sudo_cmd
+from Speedo import CmdHelp, CMD_HELP, LOGS, bot as Speedo
 from Speedo.helpers.functions import (
     convert_toimage,
     convert_tosticker,
@@ -44,8 +44,8 @@ async def crop(imagefile, endname, x):
     inverted_image.save(endname)
 
 
-@speedobot.on(admin_cmd(pattern="invert$", outgoing=True))
-@speedobot.on(sudo_cmd(pattern="invert$", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="invert$", outgoing=True))
+@Speedo.on(sudo_cmd(pattern="invert$", allow_sudo=True))
 async def memes(speedo):
     if speedo.fwd_from:
         return
@@ -128,8 +128,8 @@ async def memes(speedo):
             os.remove(files)
 
 
-@speedobot.on(admin_cmd(outgoing=True, pattern="solarize$"))
-@speedobot.on(sudo_cmd(pattern="solarize$", allow_sudo=True))
+@Speedo.on(admin_cmd(outgoing=True, pattern="solarize$"))
+@Speedo.on(sudo_cmd(pattern="solarize$", allow_sudo=True))
 async def memes(speedo):
     if speedo.fwd_from:
         return
@@ -212,8 +212,8 @@ async def memes(speedo):
             os.remove(files)
 
 
-@speedobot.on(admin_cmd(outgoing=True, pattern="mirror$"))
-@speedobot.on(sudo_cmd(pattern="mirror$", allow_sudo=True))
+@Speedo.on(admin_cmd(outgoing=True, pattern="mirror$"))
+@Speedo.on(sudo_cmd(pattern="mirror$", allow_sudo=True))
 async def memes(speedo):
     if speedo.fwd_from:
         return
@@ -296,8 +296,8 @@ async def memes(speedo):
             os.remove(files)
 
 
-@speedobot.on(admin_cmd(outgoing=True, pattern="flip$"))
-@speedobot.on(sudo_cmd(pattern="flip$", allow_sudo=True))
+@Speedo.on(admin_cmd(outgoing=True, pattern="flip$"))
+@Speedo.on(sudo_cmd(pattern="flip$", allow_sudo=True))
 async def memes(speedo):
     if speedo.fwd_from:
         return
@@ -380,8 +380,8 @@ async def memes(speedo):
             os.remove(files)
 
 
-@speedobot.on(admin_cmd(outgoing=True, pattern="gray$"))
-@speedobot.on(sudo_cmd(pattern="gray$", allow_sudo=True))
+@Speedo.on(admin_cmd(outgoing=True, pattern="gray$"))
+@Speedo.on(sudo_cmd(pattern="gray$", allow_sudo=True))
 async def memes(speedo):
     if speedo.fwd_from:
         return
@@ -464,8 +464,8 @@ async def memes(speedo):
             os.remove(files)
 
 
-@speedobot.on(admin_cmd(outgoing=True, pattern="zoom ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(outgoing=True, pattern="zoom ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
 async def memes(speedo):
     if speedo.fwd_from:
         return
@@ -555,8 +555,8 @@ async def memes(speedo):
             os.remove(files)
 
 
-@speedobot.on(admin_cmd(outgoing=True, pattern="frame ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="frame ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(outgoing=True, pattern="frame ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="frame ?(.*)", allow_sudo=True))
 async def memes(speedo):
     if speedo.fwd_from:
         return

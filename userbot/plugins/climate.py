@@ -16,7 +16,7 @@ from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
 from Speedo import CMD_HELP
-from speedobot.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 logging.basicConfig(

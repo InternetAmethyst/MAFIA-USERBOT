@@ -8,7 +8,7 @@ by © Thunder God Raiden
 
 import asyncio
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @bot.on(admin_cmd(pattern=f"wahack", outgoing=True))

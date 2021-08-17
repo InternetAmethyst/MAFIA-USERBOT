@@ -1,7 +1,7 @@
 import time
 
 from Speedo import ALIVE_NAME, StartTime, speedoversion
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon import events, version
 
 async def reply_id(event):

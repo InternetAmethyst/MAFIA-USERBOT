@@ -4,7 +4,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from Speedo import bot
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 

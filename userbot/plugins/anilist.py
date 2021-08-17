@@ -10,7 +10,7 @@ import re
 import requests
 
 from Speedo import *
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 

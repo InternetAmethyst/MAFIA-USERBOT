@@ -8,7 +8,7 @@ from telethon import events
 from telethon.tl import functions, types
 
 from Speedo import ALIVE_NAME
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 from Speedo.cmdhelp import CmdHelp
 
 global USER_night  # pylint:disable=E0602

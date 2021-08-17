@@ -2,7 +2,7 @@
 Syntax: .userlist"""
 from telethon import events
 from telethon.errors.rpcerrorlist import MessageTooLongError
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern=r"userlist ?(.*)", outgoing=True))

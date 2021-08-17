@@ -2,17 +2,17 @@ import asyncio
 import random
 from asyncio import sleep
 
-from speedobot import CmdHelp, bot as speedobot, ALIVE_NAME
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from Speedo import CmdHelp, bot as Speedo, ALIVE_NAME
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Your Lover"
 
-h1m4n5hu0p = speedobot.uid
+h1m4n5hu0p = Speedo.uid
 
 speedo = f"[{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
 
-@speedobot.on(admin_cmd(pattern="hvd$"))
-@speedobot.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="hvd$"))
+@Speedo.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
 async def love(event):
     if event.fwd_from:
         return
@@ -38,8 +38,8 @@ async def love(event):
     await event.edit("__**HAPPY VALENTINE'S DAY**__ [❤️](https://telegra.ph/file/4d51f6a5d98ba94ae2af7.jpg)", link_preview=True)
     
     
-@speedobot.on(admin_cmd(pattern="vday$"))
-@speedobot.on(sudo_cmd(pattern="vday$", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="vday$"))
+@Speedo.on(sudo_cmd(pattern="vday$", allow_sudo=True))
 async def gif(event):
     if event.fwd_from:
         return

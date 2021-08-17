@@ -9,7 +9,7 @@ import urllib
 import requests
 
 from Speedo import *
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("boobs$"))

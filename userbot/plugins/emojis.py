@@ -6,7 +6,7 @@ Available Commands:
 .emoji -_-"""
 import asyncio
 
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="emoji (.*)"))

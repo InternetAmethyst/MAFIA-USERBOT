@@ -1,6 +1,6 @@
 from Speedo import bot, CMD_HELP, ALIVE_NAME
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 import html
 from telethon import events
@@ -64,11 +64,11 @@ async def gban(Speedo):
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
     if not sender.id == hum.id:
-        speedobot = await edit_or_reply(ids, "Trying to gban this retard!")
+        Speedo = await edit_or_reply(ids, "Trying to gban this retard!")
     else:
-        speedobot = await edit_or_reply(ids, "`Ok! Gbaning this piece of shit....`")
+        Speedo = await edit_or_reply(ids, "`Ok! Gbaning this piece of shit....`")
     hum = await Speedo.client.get_me()
-    await speedobot.edit(f"`🔥Global Ban Iz Cumin💦.... Wait and watch nigga🚶`")
+    await Speedo.edit(f"`🔥Global Ban Iz Cumin💦.... Wait and watch nigga🚶`")
     my_mention = "[{}](tg://user?id={})".format(hum.first_name, hum.id)
     f"@{hum.username}" if hum.username else my_mention
     await Speedo.get_chat()
@@ -86,10 +86,10 @@ async def gban(Speedo):
         if not reason:
             reason = "Private"
     except:
-        return await speedobot.edit(f"**Something W3NT Wrong 🤔**")
+        return await Speedo.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1212368262:
-            return await speedobot.edit(
+            return await Speedo.edit(
                 f"`First Grow Some Balls To Gban My Creater🤫🚶`"
             )
         try:
@@ -109,17 +109,17 @@ async def gban(Speedo):
             try:
                 await Speedo.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await speedobot.edit(f"Gbaning This retard🚶\n\n**Please Wait Few Minutes**😏")
+                await Speedo.edit(f"Gbaning This retard🚶\n\n**Please Wait Few Minutes**😏")
             except:
                 b += 1
     else:
-        await speedobot.edit(f"`Either reply to a user or gib me user id/name`")
+        await Speedo.edit(f"`Either reply to a user or gib me user id/name`")
     try:        
         if gmute(user.id) is False:
-            return await speedobot.edit(f"**Error! User already gbanned.**")
+            return await Speedo.edit(f"**Error! User already gbanned.**")
     except:
         pass
-    return await speedobot.edit(
+    return await Speedo.edit(
         f"[{user.first_name}](tg://user?id={user.id}) Beta majdur ko khodna aur [{HIMANSHU}](tg://user?id={papa}) ko chodna kabhi sikhana nhi.\n\n**Gban Successful 🔥\nAffected Chats😏 : {a} **"
     )
 
@@ -132,11 +132,11 @@ async def gunban(Speedo):
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
     if not sender.id == hum.id:
-        speedobot = await edit_or_reply(ids, "`Trying to ungban this kid...`")
+        Speedo = await edit_or_reply(ids, "`Trying to ungban this kid...`")
     else:
-        speedobot = await edit_or_reply(ids, "`Ungban in progress...`")
+        Speedo = await edit_or_reply(ids, "`Ungban in progress...`")
     hum = await Speedo.client.get_me()
-    await speedobot.edit(f"`Trying to ungban this kiddo...`")
+    await Speedo.edit(f"`Trying to ungban this kiddo...`")
     my_mention = "[{}](tg://user?id={})".format(hum.first_name, hum.id)
     f"@{hum.username}" if hum.username else my_mention
     await Speedo.get_chat()
@@ -154,10 +154,10 @@ async def gunban(Speedo):
         if not reason:
             reason = "Private"
     except:
-        return await speedobot.edit("**Som3ting W3nt Wr0ng**")
+        return await Speedo.edit("**Som3ting W3nt Wr0ng**")
     if user:
         if user.id == 1212368262:
-            return await speedobot.edit("**You need to grow some balls to gban / ungban my creator**")
+            return await Speedo.edit("**You need to grow some balls to gban / ungban my creator**")
         try:
             from Speedo.plugins.sql_helper.gmute_sql import ungmute
         except:
@@ -175,17 +175,17 @@ async def gunban(Speedo):
             try:
                 await Speedo.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await speedobot.edit(f"Ok! Now Ungbaning this kiddo.\n\n**Please Wait Few Minutes**😏")
+                await Speedo.edit(f"Ok! Now Ungbaning this kiddo.\n\n**Please Wait Few Minutes**😏")
             except:
                 b += 1
     else:
-        await speedobot.edit("**Reply to a user**")     
+        await Speedo.edit("**Reply to a user**")     
     try:
         if ungmute(user.id) is False:
-            return await speedobot.edit("**Error! I think User already ungbanned.**")
+            return await Speedo.edit("**Error! I think User already ungbanned.**")
     except:
         pass
-    return await speedobot.edit(
+    return await Speedo.edit(
         f"**[{user.first_name}](tg://user?id={user.id}) Aur bhai.... Aagya swaad.**\n\nUngban Successful 🔥\nChats :- `{a}`"
     )
 

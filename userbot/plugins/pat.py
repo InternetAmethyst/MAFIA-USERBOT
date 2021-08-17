@@ -11,7 +11,7 @@ from urllib import parse
 
 import requests
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 BASE_URL = "https://headp.at/pats/{}"

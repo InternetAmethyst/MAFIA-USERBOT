@@ -7,7 +7,7 @@ import asyncio
 from Speedo.cmdhelp import CmdHelp
 
 from Speedo import *
-from speedobot.utils import *
+from Speedo.utils import *
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 

@@ -1,13 +1,13 @@
 #credit goes to Hellbot
-#modifiy by @D3krish for speedobot
-#If you kang this plugin please don't forget to give credit to speedobot and Hellbot. 
+#modifiy by @D3krish for Speedo
+#If you kang this plugin please don't forget to give credit to Speedo and Hellbot. 
 import os
 import random
 import time
 
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos, InputMessagesFilterDocument
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from . import *
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"

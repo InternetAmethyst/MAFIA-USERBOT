@@ -1,13 +1,13 @@
 # Made By @Kraken_The_BadASS. Keep Credit if you are gonna copy paste it. LOL NOOBS....
 # Exclusive plugins from my channel @testpy12
 # Also some from my bro's channel @pyforub......(sawan me lagg gai aag🔥🔥🔥🔥🔥🔥🔥🔥)
-# Now in speedobot....
+# Now in Speedo....
 
 import random
 from asyncio import sleep
 import asyncio
 from Speedo import CMD_HELP, ALIVE_NAME
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"

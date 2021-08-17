@@ -5,8 +5,8 @@
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from speedobot import CmdHelp
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo import CmdHelp
 
 @bot.on(admin_cmd(pattern="gps ?(.*)"))
 @bot.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
@@ -23,7 +23,7 @@ async def gps(event):
 
     await edit_or_reply(event, "Finding😁")
 
-    geolocator = Nominatim(user_agent="speedobot")
+    geolocator = Nominatim(user_agent="Speedo")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:

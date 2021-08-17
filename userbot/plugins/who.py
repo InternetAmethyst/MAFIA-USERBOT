@@ -3,7 +3,7 @@ import html
 from telethon import events, utils
 from telethon.tl import types
 from Speedo.cmdhelp import CmdHelp
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 def get_who_string(who):
     who_string = html.escape(utils.get_display_name(who))

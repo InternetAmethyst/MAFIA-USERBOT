@@ -16,7 +16,7 @@ from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
 from Speedo import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 
@@ -416,7 +416,7 @@ async def uploadas(uas_event):
 
 
 CmdHelp("upld_dwl").add_command(
-  "download", "<reply to a file>", "Downloads the file to speedobot's server"
+  "download", "<reply to a file>", "Downloads the file to Speedo's server"
 ).add_command(
   "upload", "<path>", "Uploads a locally stored file to the chat"
 ).add_command(

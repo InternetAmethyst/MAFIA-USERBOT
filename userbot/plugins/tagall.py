@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 

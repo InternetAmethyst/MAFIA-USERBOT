@@ -10,7 +10,7 @@ import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from Speedo import bot
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from Speedo.cmdhelp import CmdHelp
 from Speedo.helpers.functions import deEmojify
 

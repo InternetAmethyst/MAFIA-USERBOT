@@ -1,7 +1,7 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("circle ?(.*)"))

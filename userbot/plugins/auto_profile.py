@@ -6,7 +6,7 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 
 from Speedo import ALIVE_NAME, BIO_MSG, CMD_HELP
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "LEGENDARY AF MAFIABOT"

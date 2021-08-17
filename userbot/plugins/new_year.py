@@ -11,7 +11,7 @@ import asyncio
 # credits to kraken, john snow
 from Speedo import CMD_HELP, ALIVE_NAME
 # credits to kraken, john snow
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 # credits to kraken, john snow
 from Speedo.cmdhelp import CmdHelp
 # credits to kraken, john snow

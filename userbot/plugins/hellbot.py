@@ -8,7 +8,7 @@ type '.hellbot' to get HellBot repo
 """
 
 import random, re
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 import asyncio
 from telethon import events
 

@@ -1,7 +1,7 @@
 from telethon import events, utils
 from telethon.tl import types
 from Speedo.plugins.sql_helper.snips_sql import get_snips, add_snip, remove_snip, get_all_snips
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 

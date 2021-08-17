@@ -3,7 +3,7 @@ import os
 import time
 import zipfile
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @bot.on(admin_cmd(pattern="compress ?(.*)", outgoing=True))

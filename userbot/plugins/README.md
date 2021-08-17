@@ -10,8 +10,8 @@ The Mandatory Imports are now automatically imported.
 ### Formation
 Now I will show a short script to show the formation of the desired script.
 ```python3
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
-from speedobot import CmdHelp
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from Speedo import CmdHelp
 
 @bot.on(admin_cmd(pattern="hello$", outgoing=True))
 @bot.on(sudo_cmd(pattern="hello$", allow_sudo=True))

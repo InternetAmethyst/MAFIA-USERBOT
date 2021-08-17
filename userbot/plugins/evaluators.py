@@ -6,7 +6,7 @@ import os
 import sys
 import traceback
 
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo import *
 from Speedo.cmdhelp import CmdHelp
 
@@ -28,7 +28,7 @@ async def _(event):
     if speedouser.username:
         curruser = speedouser.username
     else:
-        curruser = "speedobot"
+        curruser = "Speedo"
     uid = os.geteuid()
     if uid == 0:
         cresult = f"`{curruser}:~#` `{cmd}`\n`{result}`"

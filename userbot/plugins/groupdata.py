@@ -20,7 +20,7 @@ from telethon.tl.types import ChannelParticipantsAdmins, MessageActionChannelMig
 from telethon.utils import get_input_location
 
 from Speedo import CMD_HELP
-from speedobot.utils import admin_cmd, errors_handler, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, errors_handler, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 

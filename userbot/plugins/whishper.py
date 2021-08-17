@@ -1,6 +1,6 @@
 # Made by @Kraken_The_BadASS for @speedoBot_Official
 
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 

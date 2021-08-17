@@ -16,7 +16,7 @@ from Speedo.plugins.sql_helper.echo_sql import (
     is_echo,
     remove_echo,
 )
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 

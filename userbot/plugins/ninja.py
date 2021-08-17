@@ -7,13 +7,13 @@ from telethon import events
 import telethon.utils
 from telethon.errors import rpcbaseerrors
 
-from speedobot.utils import admin_cmd, sudo_cmd, errors_handler
-from Speedo import bot as speedobot
+from Speedo.utils import admin_cmd, sudo_cmd, errors_handler
+from Speedo import bot as Speedo
 from Speedo import BOTLOG, BOTLOG_CHATID
 
 
-@speedobot.on(admin_cmd(outgoing=True, pattern="del$"))
-@speedobot.on(sudo_cmd(allow_sudo=True, pattern="del$"))
+@Speedo.on(admin_cmd(outgoing=True, pattern="del$"))
+@Speedo.on(sudo_cmd(allow_sudo=True, pattern="del$"))
 @errors_handler
 async def delete_it(safai):
     """ For .del command, delete the replied message. """

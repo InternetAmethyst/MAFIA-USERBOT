@@ -15,7 +15,7 @@ from telethon.tl.types import (
 
 #from Speedo import CMD_HELP
 from Speedo.Config import Config
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 KANGING_STR = [
@@ -31,7 +31,7 @@ KANGING_STR = [
     "Mr.Steal Your Sticker is stealing this sticker... ",
 ]
 
-speedobot = Config.CUSTOM_STICKER_PACK_NAME
+Speedo = Config.CUSTOM_STICKER_PACK_NAME
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="kang"))
@@ -101,8 +101,8 @@ async def kang(args):
 
         packname = f"HB_{user.username}_speedoBot_{pack}"
         packnick = (
-            f"{speedobot} Vol.{pack}"
-            if speedobot
+            f"{Speedo} Vol.{pack}"
+            if Speedo
             else f"@{user.username}'s speedoBot Vol.{pack}"
         )
         cmd = "/newpack"
@@ -137,8 +137,8 @@ async def kang(args):
                     pack += 1
                     packname = f"HB_{user.username}_by_{user.username}_{pack}"
                     packnick = (
-                        f"{speedobot} Vol.{pack}"
-                        if speedobot
+                        f"{Speedo} Vol.{pack}"
+                        if Speedo
                         else f"@{user.username}'s speedoBot Vol.{pack}"
                     )
                     await args.edit(

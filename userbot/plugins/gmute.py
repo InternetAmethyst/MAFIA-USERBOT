@@ -1,6 +1,6 @@
 from Speedo.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 import asyncio
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 from telethon import events
 

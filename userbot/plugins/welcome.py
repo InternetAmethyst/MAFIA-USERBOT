@@ -7,7 +7,7 @@ from Speedo.plugins.sql_helper.welcome_sql import (
     rm_welcome_setting,
     update_previous_welcome,
 )
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 

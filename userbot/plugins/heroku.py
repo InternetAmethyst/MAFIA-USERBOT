@@ -7,7 +7,7 @@ import requests
 
 from Speedo import CMD_HELP
 from Speedo.Config import Config
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 import urllib3
 
@@ -22,7 +22,7 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
-speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
+speedo_logo = "./H1M4N5HU0P/Speedo_logo.jpg"
 
 
 @borg.on(

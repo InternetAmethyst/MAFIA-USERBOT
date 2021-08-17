@@ -6,12 +6,12 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from speedobot import CmdHelp, bot as speedobot
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo import CmdHelp, bot as Speedo
 
 
-@speedobot.on(admin_cmd("gencc$"))
-@speedobot.on(sudo_cmd("gencc$", allow_sudo=True))
+@Speedo.on(admin_cmd("gencc$"))
+@Speedo.on(sudo_cmd("gencc$", allow_sudo=True))
 async def _(speedoevent):
     if speedoevent.fwd_from:
         return
@@ -23,8 +23,8 @@ async def _(speedoevent):
     await edit_or_reply(speedoevent, f"__**👤 NAME :- **__\n`{speedoname}`\n\n__**🏡 ADDRESS :- **__\n`{speedoadre}`\n\n__**💸 CARD :- **__\n`{speedocard}`")
     
 
-@speedobot.on(admin_cmd(pattern="bin ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="bin ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -44,8 +44,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@speedobot.on(admin_cmd(pattern="vbv ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="vbv ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -65,8 +65,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
     
     
-@speedobot.on(admin_cmd(pattern="key ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="key ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -86,8 +86,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
  
   
-@speedobot.on(admin_cmd(pattern="iban ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="iban ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -107,8 +107,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
     
-@speedobot.on(admin_cmd(pattern="ccheck ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="ccheck ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -128,8 +128,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
              
              
-@speedobot.on(admin_cmd(pattern="ccbin ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="ccbin ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 

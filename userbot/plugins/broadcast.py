@@ -5,7 +5,7 @@ import base64
 from asyncio import sleep
 
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo import BOTLOG, BOTLOG_CHATID
 from Speedo.helpers.format import parse_pre
 from Speedo.plugins.sql_helper import broadcast_sql as sql

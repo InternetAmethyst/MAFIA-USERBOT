@@ -5,7 +5,7 @@ import requests
 from telethon import functions
 
 from Speedo import ALIVE_NAME, CMD_LIST, SUDO_LIST
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="help ?(.*)", outgoing=True))

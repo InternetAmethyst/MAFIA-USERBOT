@@ -11,7 +11,7 @@ from subprocess import run as runapp
 import pybase64
 
 #from Speedo import CMD_HELP
-from speedobot.utils import errors_handler, admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import errors_handler, admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="hash (.*)", outgoing=True))

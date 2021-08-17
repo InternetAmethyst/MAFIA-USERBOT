@@ -9,7 +9,7 @@ import time
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 from Speedo.cmdhelp import CmdHelp
 
 if not os.path.isdir("./SAVED"):

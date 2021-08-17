@@ -31,7 +31,7 @@ from telethon.tl.types import (
 
 from Speedo import *
 from Speedo.plugins.sql_helper.mute_sql import is_muted, mute, unmute
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 # =================== CONSTANT ===================

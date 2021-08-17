@@ -5,11 +5,11 @@ import os
 import time
 from datetime import datetime
 
-from speedobot.utils import admin_cmd, sudo_cmd, progress
+from Speedo.utils import admin_cmd, sudo_cmd, progress
 from Speedo import CMD_HELP
 from Speedo.cmdhelp import CmdHelp
 
-FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/speedobot.media.ffmpeg"
+FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/Speedo.media.ffmpeg"
 
 async def reply_id(event):
     reply_to_id = None

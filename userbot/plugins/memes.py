@@ -17,7 +17,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from Speedo.cmdhelp import CmdHelp
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 # ================= CONSTANT =================
 

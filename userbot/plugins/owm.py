@@ -16,7 +16,7 @@ from pytz import timezone as tz
 from Speedo import CMD_HELP
 from Speedo import OPEN_WEATHER_MAP_APPID as OWM_API
 from Speedo.events import errors_handler
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 

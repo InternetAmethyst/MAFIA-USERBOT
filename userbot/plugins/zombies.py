@@ -32,7 +32,7 @@ from telethon.utils import get_input_location
 
 from Speedo import BOTLOG, BOTLOG_CHATID
 
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 from Speedo.Config import Config
 

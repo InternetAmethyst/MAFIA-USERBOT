@@ -10,7 +10,7 @@ from datetime import datetime
 from pySmartDL import SmartDL
 
 from Speedo import ALIVE_NAME, CMD_HELP
-from speedobot.utils import admin_cmd, humanbytes, progress, sudo_cmd
+from Speedo.utils import admin_cmd, humanbytes, progress, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"

@@ -2,12 +2,12 @@
 
 from Speedo import *
 from Speedo import CMD_HELP
-from speedobot.utils import *
+from Speedo.utils import *
 
 
 @bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
-async def speedobott(event):
+async def Speedot(event):
     if event.fwd_from:
         return
     """ .plinfo cmd """

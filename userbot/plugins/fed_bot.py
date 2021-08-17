@@ -12,10 +12,10 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon import functions, types, events
-from speedobot import CmdHelp, bot as speedobot
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
-from speedobot.Config import Config
-from speedobot.plugins.sql_helper.fban_sql import (
+from Speedo import CmdHelp, bot as Speedo
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from Speedo.Config import Config
+from Speedo.plugins.sql_helper.fban_sql import (
     add_channel,
     get_all_channels,
     in_channels,
@@ -24,14 +24,14 @@ from speedobot.plugins.sql_helper.fban_sql import (
 
 logs_id = Config.FBAN_LOGGER_GROUP
 bot = "@MissRose_bot"
-speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
+speedo_logo = "./H1M4N5HU0P/Speedo_logo.jpg"
 # Keep all credits pls
 # madewith great effort by @HeisenbergTheDanger
 # modified by @kraken_the_badass for fbans
 
 
-@speedobot.on(admin_cmd(pattern="fban ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="fban ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,8 +144,8 @@ async def _(event):
                 except BaseException:
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")# Written by @HeisenbergTheDanger
 
-@speedobot.on(admin_cmd(pattern="unfban ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="unfban ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -259,8 +259,8 @@ async def _(event):
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")
 
 
-@speedobot.on(admin_cmd(pattern=r"fadd ?(.*)"))
-@speedobot.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern=r"fadd ?(.*)"))
+@Speedo.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -300,8 +300,8 @@ async def add_ch(event):
         await event.delete()
 
 
-@speedobot.on(admin_cmd(pattern=r"fremove ?(.*)"))
-@speedobot.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern=r"fremove ?(.*)"))
+@Speedo.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -329,8 +329,8 @@ async def remove_ch(event):
         await event.delete()
 
 
-@speedobot.on(admin_cmd(pattern="fgroups"))
-@speedobot.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="fgroups"))
+@Speedo.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
 async def list(event):
     if event.fwd_from:
         return
@@ -356,8 +356,8 @@ async def list(event):
         await eor(event, msg)
 
 
-@speedobot.on(admin_cmd(pattern="fsearch ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="fsearch ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
 async def search(event):
     if event.fwd_from:
         return
@@ -377,8 +377,8 @@ async def search(event):
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
-@speedobot.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
-@speedobot.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
+@Speedo.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -403,8 +403,8 @@ async def _(event):
             await eor(event, f"{response.message.message}")
 
 
-@speedobot.on(admin_cmd(pattern="renamefed ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="renamefed ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -424,8 +424,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@speedobot.on(admin_cmd(pattern="fstat ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="fstat ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -454,7 +454,7 @@ async def _(event):
                     await massive.click(0)
                     await asyncio.sleep(2)
                     massive = await conv.get_response()
-                    await speedobot.send_file(
+                    await Speedo.send_file(
                         event.chat_id,
                         massive,
                         thumb=thumb,
@@ -467,8 +467,8 @@ async def _(event):
                 await speedo.edit("`Please Unblock` @MissRose_Bot")
 
 
-@speedobot.on(admin_cmd(pattern="fedinfo ?(.*)"))
-@speedobot.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="fedinfo ?(.*)"))
+@Speedo.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

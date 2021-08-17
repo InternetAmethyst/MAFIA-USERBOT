@@ -3,12 +3,12 @@ import os
 import asyncio
 
 from Speedo import CmdHelp
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from Speedo import bot as speedobot
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo import bot as Speedo
 
 
-@speedobot.on(admin_cmd(pattern=r"unpack", outgoing=True))
-@speedobot.on(sudo_cmd(pattern=r"unpack"))
+@Speedo.on(admin_cmd(pattern=r"unpack", outgoing=True))
+@Speedo.on(sudo_cmd(pattern=r"unpack"))
 async def _(event):
     b = await event.client.download_media(await event.get_reply_message())
     a = open(b, "r")
@@ -23,8 +23,8 @@ async def _(event):
     os.remove(b)
 
 
-@speedobot.on(admin_cmd(pattern="repack ?(.*)", outgoing=True))
-@speedobot.on(sudo_cmd(pattern="repack ?(.*)", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern="repack ?(.*)", outgoing=True))
+@Speedo.on(sudo_cmd(pattern="repack ?(.*)", allow_sudo=True))
 async def _(event):
     a = await event.get_reply_message()
     input_str = event.pattern_match.group(1)

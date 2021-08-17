@@ -11,7 +11,7 @@ import asyncio
 from os import execl
 from time import sleep
 
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 from Speedo.cmdhelp import CmdHelp
 from Speedo import HEROKU_APP, bot
 

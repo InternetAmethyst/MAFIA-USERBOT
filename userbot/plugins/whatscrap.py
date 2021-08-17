@@ -1,5 +1,5 @@
 """Syntax: .whatscrapp as reply to a message copied from @WhatsCRApp"""
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import *
 # when you are tight on schedule...
 # and also lazy af!!

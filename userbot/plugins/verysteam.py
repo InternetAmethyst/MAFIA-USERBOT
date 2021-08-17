@@ -12,7 +12,7 @@ from datetime import datetime
 import aiohttp
 import magic
 import requests
-from speedobot.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 

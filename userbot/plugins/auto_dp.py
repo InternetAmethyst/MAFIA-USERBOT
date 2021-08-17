@@ -19,7 +19,7 @@ import requests
 from telethon.tl import functions
 
 from Speedo import CMD_HELP
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 from Speedo.cmdhelp import CmdHelp
 
 COLLECTION_STRING1 = [

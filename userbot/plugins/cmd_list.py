@@ -1,15 +1,15 @@
 import asyncio
 import io
 
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from Speedo import bot as speedobot
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo import bot as Speedo
 from Speedo import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
-speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
+speedo_logo = "./H1M4N5HU0P/Speedo_logo.jpg"
 
-@speedobot.on(admin_cmd(pattern=r"cmds"))
-@speedobot.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
+@Speedo.on(admin_cmd(pattern=r"cmds"))
+@Speedo.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
@@ -37,5 +37,5 @@ async def install(event):
                 thumb=thumb,
                 reply_to=reply_to_id,
             )
-            await edit_or_reply(speedo_file, f"Output Too Large. This is the file for the list of plugins in speedobot.\n\n**BY :-** {DEFAULTUSER}")
+            await edit_or_reply(speedo_file, f"Output Too Large. This is the file for the list of plugins in Speedo.\n\n**BY :-** {DEFAULTUSER}")
             await event.delete()

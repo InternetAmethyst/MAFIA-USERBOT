@@ -5,7 +5,7 @@ from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
 from Speedo import ALIVE_NAME
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 MAFIA_NAME = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
@@ -23,7 +23,7 @@ async def _(event):
     if event.fwd_from:
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [speedoBot Chat Group](t.me/speedobot_Chit_Chat) for assistance"
+        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [speedoBot Chat Group](t.me/Speedo_Chit_Chat) for assistance"
         )
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):

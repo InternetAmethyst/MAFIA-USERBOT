@@ -6,7 +6,7 @@ import os
 import shutil
 
 from Speedo.google_imgs import googleimagesdownload
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.Config import Config
 
 async def reply_id(event):

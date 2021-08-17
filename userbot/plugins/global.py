@@ -14,8 +14,8 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                    ChatBannedRights,
                                      MessageEntityMentionName,
                                        MessageMediaPhoto)
-from speedobot.utils import register, errors_handler
-from speedobot.utils import admin_cmd
+from Speedo.utils import register, errors_handler
+from Speedo.utils import admin_cmd
 from Speedo import bot as borg
 from Speedo.cmdhelp import CmdHelp
 

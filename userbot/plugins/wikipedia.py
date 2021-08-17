@@ -5,7 +5,7 @@
 Syntax: .wikipedia Query"""
 
 import wikipedia
-from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Speedo.utils import admin_cmd, sudo_cmd, edit_or_reply
 from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="wikipedia (.*)"))

@@ -6,7 +6,7 @@ Available Commands:
 import emoji
 from googletrans import Translator
 
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="trt ?(.*)"))

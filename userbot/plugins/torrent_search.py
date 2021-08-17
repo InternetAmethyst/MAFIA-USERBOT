@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup as bs
 import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 
 from Speedo.cmdhelp import CmdHelp
-from speedobot.utils import humanbytes, admin_cmd
+from Speedo.utils import humanbytes, admin_cmd
 
 
 def dogbin(magnets):

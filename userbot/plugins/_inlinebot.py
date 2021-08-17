@@ -25,7 +25,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 
 from Speedo import *
 from Speedo.cmdhelp import *
-from speedobot.utils import *
+from Speedo.utils import *
 from Speedo.Config import Config
 
 speedo_row = Config.BUTTONS_IN_HELP

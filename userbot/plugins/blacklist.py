@@ -13,7 +13,7 @@ from telethon import events
 
 from Speedo.plugins.sql_helper import blacklist_sql as sql
 from Speedo import CMD_HELP
-from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Speedo.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Speedo.cmdhelp import CmdHelp
 
 

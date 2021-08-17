@@ -1,7 +1,7 @@
 # credits: SNAPDRAGON (@s_n_a_p_s)
 import asyncio
 import time
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 from Speedo.cmdhelp import CmdHelp
 
 

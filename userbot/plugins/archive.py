@@ -19,7 +19,7 @@ from telethon.tl.types import DocumentAttributeVideo
 
 from Speedo import CMD_HELP
 from Speedo.Config import Config
-from speedobot.utils import admin_cmd, progress
+from Speedo.utils import admin_cmd, progress
 from Speedo.cmdhelp import CmdHelp
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"

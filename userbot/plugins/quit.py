@@ -5,7 +5,7 @@ import time
 
 from telethon.tl.functions.channels import LeaveChannelRequest
 
-from speedobot.utils import admin_cmd
+from Speedo.utils import admin_cmd
 
 
 @borg.on(admin_cmd("kickme", outgoing=True))
