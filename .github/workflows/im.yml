@@ -19,7 +19,7 @@ jobs:
 
         with:
 
-          find: "userbot"
+          find: "speedobot"
 
           replace: "Speedo"
 
