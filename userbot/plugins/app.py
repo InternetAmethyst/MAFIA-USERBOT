@@ -1,4 +1,4 @@
-"""Fetch App Details from Playstore. @MafiaBot_Support
+"""Fetch App Details from Playstore. @speedoBot_Support
 .app <app_name> to fetch app details.
 .appr <app_name>  to fetch app details with Xpl0iter request link.
 .mods <app_name> to get the premier app from telegram if available.."""
@@ -10,7 +10,7 @@ from userbot import ALIVE_NAME, CMD_HELP
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 
 
 @bot.on(admin_cmd(pattern="app (.*)"))

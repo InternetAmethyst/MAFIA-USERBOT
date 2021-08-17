@@ -1,5 +1,5 @@
 # credits to userge
-# ported to MafiaBot by @H1M4N5HU0P
+# ported to speedoBot by @H1M4N5HU0P
 # will be adding more soon
 
 import asyncio

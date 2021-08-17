@@ -3,7 +3,7 @@
 # animation Idea by @NOOB_GUY_OP (Sipakisking) && @Hell boy_pikachu
 # Made by @ROMANTIC_KILLER...and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
-# Porting in Mafia Userbot by @H1M4N5HU0P
+# Porting in speedo Userbot by @H1M4N5HU0P
 
 import asyncio
 import random
@@ -48,11 +48,11 @@ pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
 pm_caption += f"┣•➳➠ `Telethon:` `{version.__version__}` \n"
 pm_caption += f"┣•➳➠ `Version:` `{speedoversion}`\n"
 pm_caption += f"┣•➳➠ `Sudo:` `{sudou}`\n"
-pm_caption += f"┣•➳➠ `Channel:` [ᴊᴏɪɴ](https://t.me/MafiaBot_Support)\n"
+pm_caption += f"┣•➳➠ `Channel:` [ᴊᴏɪɴ](https://t.me/speedoBot_Support)\n"
 pm_caption += f"┣•➳➠ `Creator:` [Himanshu](https://t.me/H1M4N5HU0P)\n"
 pm_caption += f"┣•➳➠ `Supporter:` [HellBoy](https://t.me/kraken_the_badass)\n"
 pm_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
-pm_caption += " [🔥REPO🔥](https://github.com/MafiaBotOP/MafiaBot) 🔹 [📜License📜](https://github.com/MafiaBotOP/MafiaBot/blob/main/LICENSE)"
+pm_caption += " [🔥REPO🔥](https://github.com/speedoBotOP/speedoBot) 🔹 [📜License📜](https://github.com/speedoBotOP/speedoBot/blob/main/LICENSE)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))

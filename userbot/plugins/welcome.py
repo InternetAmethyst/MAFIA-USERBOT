@@ -109,7 +109,7 @@ async def _(event):
         await edit_or_reply(event, "No Welcome Message found")
 
 CmdHelp("welcome").add_command(
-  "listwelcome", None, "Gets the saved welcome message of MafiaBot"
+  "listwelcome", None, "Gets the saved welcome message of speedoBot"
 ).add_command(
   "clearwelcome", None, "Clears/Deletes the welcome message (if any)"
 ).add_command(

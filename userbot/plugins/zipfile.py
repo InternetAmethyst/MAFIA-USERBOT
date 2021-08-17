@@ -45,7 +45,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 directory_name + ".zip",
-                caption="Zipped By [MafiaBot](t.me/MafiaBot_Support)",
+                caption="Zipped By [speedoBot](t.me/speedoBot_Support)",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,

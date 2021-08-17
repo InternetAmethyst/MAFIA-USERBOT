@@ -1,6 +1,6 @@
 #credit goes to Hellbot
-#modifiy by @D3krish for Mafiabot
-#If you kang this plugin please don't forget to give credit to Mafiabot and Hellbot. 
+#modifiy by @D3krish for speedobot
+#If you kang this plugin please don't forget to give credit to speedobot and Hellbot. 
 import os
 import random
 import time
@@ -10,7 +10,7 @@ from telethon.tl.types import InputMessagesFilterPhotos, InputMessagesFilterDocu
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from . import *
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 speedo = borg.uid
 
 PICS_STR = []
@@ -59,7 +59,7 @@ async def _(speedoevent):
     draw.text(
         (w_, h_), text, font=font, fill="white", stroke_width=strik, stroke_fill="black"
     )
-    file_name = "MafiaBot.png"
+    file_name = "speedoBot.png"
     img.save(file_name, "png")
     await bot.send_file(
         speedoevent.chat_id,

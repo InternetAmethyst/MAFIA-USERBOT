@@ -8,7 +8,7 @@ from sqlalchemy import Column, String, UnicodeText, distinct, func
 from . import BASE, SESSION
 
 
-class MafiaBroadcast(BASE):
+class speedoBroadcast(BASE):
     __tablename__ = "speedobroadcast"
     keywoard = Column(UnicodeText, primary_key=True)
     group_id = Column(String(14), primary_key=True, nullable=False)
@@ -18,19 +18,19 @@ class MafiaBroadcast(BASE):
         self.group_id = str(group_id)
 
     def __repr__(self):
-        return "<Mafia Broadcast channels '%s' for %s>" % (self.group_id, self.keywoard)
+        return "<speedo Broadcast channels '%s' for %s>" % (self.group_id, self.keywoard)
 
     def __eq__(self, other):
         return bool(
-            isinstance(other, MafiaBroadcast)
+            isinstance(other, speedoBroadcast)
             and self.keywoard == other.keywoard
             and self.group_id == other.group_id
         )
 
 
-MafiaBroadcast.__table__.create(checkfirst=True)
+speedoBroadcast.__table__.create(checkfirst=True)
 
-MafiaBROADCAST_INSERTION_LOCK = threading.RLock()
+speedoBROADCAST_INSERTION_LOCK = threading.RLock()
 
 
 class BROADCAST_SQL:
@@ -42,8 +42,8 @@ BROADCAST_SQL_ = BROADCAST_SQL()
 
 
 def add_to_broadcastlist(keywoard, group_id):
-    with MafiaBROADCAST_INSERTION_LOCK:
-        broadcast_group = MafiaBroadcast(keywoard, str(group_id))
+    with speedoBROADCAST_INSERTION_LOCK:
+        broadcast_group = speedoBroadcast(keywoard, str(group_id))
 
         SESSION.merge(broadcast_group)
         SESSION.commit()
@@ -51,8 +51,8 @@ def add_to_broadcastlist(keywoard, group_id):
 
 
 def rm_from_broadcastlist(keywoard, group_id):
-    with MafiaBROADCAST_INSERTION_LOCK:
-        broadcast_group = SESSION.query(MafiaBroadcast).get((keywoard, str(group_id)))
+    with speedoBROADCAST_INSERTION_LOCK:
+        broadcast_group = SESSION.query(speedoBroadcast).get((keywoard, str(group_id)))
         if broadcast_group:
             if str(group_id) in BROADCAST_SQL_.BROADCAST_CHANNELS.get(keywoard, set()):
                 BROADCAST_SQL_.BROADCAST_CHANNELS.get(keywoard, set()).remove(
@@ -68,16 +68,16 @@ def rm_from_broadcastlist(keywoard, group_id):
 
 
 def is_in_broadcastlist(keywoard, group_id):
-    with MafiaBROADCAST_INSERTION_LOCK:
-        broadcast_group = SESSION.query(MafiaBroadcast).get((keywoard, str(group_id)))
+    with speedoBROADCAST_INSERTION_LOCK:
+        broadcast_group = SESSION.query(speedoBroadcast).get((keywoard, str(group_id)))
         return bool(broadcast_group)
 
 
 def del_keyword_broadcastlist(keywoard):
-    with MafiaBROADCAST_INSERTION_LOCK:
+    with speedoBROADCAST_INSERTION_LOCK:
         broadcast_group = (
-            SESSION.query(MafiaBroadcast.keywoard)
-            .filter(MafiaBroadcast.keywoard == keywoard)
+            SESSION.query(speedoBroadcast.keywoard)
+            .filter(speedoBroadcast.keywoard == keywoard)
             .delete()
         )
         BROADCAST_SQL_.BROADCAST_CHANNELS.pop(keywoard)
@@ -90,7 +90,7 @@ def get_chat_broadcastlist(keywoard):
 
 def get_broadcastlist_chats():
     try:
-        chats = SESSION.query(MafiaBroadcast.keywoard).distinct().all()
+        chats = SESSION.query(speedoBroadcast.keywoard).distinct().all()
         return [i[0] for i in chats]
     finally:
         SESSION.close()
@@ -98,7 +98,7 @@ def get_broadcastlist_chats():
 
 def num_broadcastlist():
     try:
-        return SESSION.query(MafiaBroadcast).count()
+        return SESSION.query(speedoBroadcast).count()
     finally:
         SESSION.close()
 
@@ -106,8 +106,8 @@ def num_broadcastlist():
 def num_broadcastlist_chat(keywoard):
     try:
         return (
-            SESSION.query(MafiaBroadcast.keywoard)
-            .filter(MafiaBroadcast.keywoard == keywoard)
+            SESSION.query(speedoBroadcast.keywoard)
+            .filter(speedoBroadcast.keywoard == keywoard)
             .count()
         )
     finally:
@@ -116,18 +116,18 @@ def num_broadcastlist_chat(keywoard):
 
 def num_broadcastlist_chats():
     try:
-        return SESSION.query(func.count(distinct(MafiaBroadcast.keywoard))).scalar()
+        return SESSION.query(func.count(distinct(speedoBroadcast.keywoard))).scalar()
     finally:
         SESSION.close()
 
 
 def __load_chat_broadcastlists():
     try:
-        chats = SESSION.query(MafiaBroadcast.keywoard).distinct().all()
+        chats = SESSION.query(speedoBroadcast.keywoard).distinct().all()
         for (keywoard,) in chats:
             BROADCAST_SQL_.BROADCAST_CHANNELS[keywoard] = []
 
-        all_groups = SESSION.query(MafiaBroadcast).all()
+        all_groups = SESSION.query(speedoBroadcast).all()
         for x in all_groups:
             BROADCAST_SQL_.BROADCAST_CHANNELS[x.keywoard] += [x.group_id]
 

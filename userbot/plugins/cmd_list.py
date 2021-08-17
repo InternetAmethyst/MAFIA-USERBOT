@@ -5,7 +5,7 @@ from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import bot as speedobot
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
 
 @speedobot.on(admin_cmd(pattern=r"cmds"))
@@ -25,7 +25,7 @@ async def install(event):
     o = stdout.decode()
     _o = o.split("\n")
     o = "\n".join(_o)
-    OUTPUT = f"List of Plugins in MafiaBot :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/MafiaBot_Chit_Chat for help."
+    OUTPUT = f"List of Plugins in speedoBot :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/speedoBot_Chit_Chat for help."
     if len(OUTPUT) > 69:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "cmd_list.text"

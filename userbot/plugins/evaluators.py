@@ -148,7 +148,7 @@ async def _(event):
 CmdHelp("evaluators").add_command(
   'eval', '<expr>', 'Execute python script'
 ).add_command(
-  'exec', '<command>', 'Execute a Terminal command on MafiaBot server and shows details'
+  'exec', '<command>', 'Execute a Terminal command on speedoBot server and shows details'
 ).add_command(
   'bash', '<query>', 'Bash your codes on linux and gives the output in current chat'
 ).add()

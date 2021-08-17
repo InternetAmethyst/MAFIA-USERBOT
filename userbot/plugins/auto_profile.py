@@ -11,7 +11,7 @@ from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "LEGENDARY AF MAFIABOT"
 DEL_TIME_OUT = 60
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 
 
 @bot.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602

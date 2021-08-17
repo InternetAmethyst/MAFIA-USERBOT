@@ -458,7 +458,7 @@ async def _(event):
                         event.chat_id,
                         massive,
                         thumb=thumb,
-                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using MafiaBot](t.me/MafiaBot_Support) ⚡**",
+                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using speedoBot](t.me/speedoBot_Support) ⚡**",
                     )
                 else:
                     await borg.send_message(event.chat_id, massive.text)

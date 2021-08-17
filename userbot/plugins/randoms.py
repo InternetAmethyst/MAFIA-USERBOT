@@ -10,7 +10,7 @@ from userbot import CMD_HELP, ALIVE_NAME
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 
 h1m4n5hu0p = bot.uid
 

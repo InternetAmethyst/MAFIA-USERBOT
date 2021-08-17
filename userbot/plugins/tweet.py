@@ -5,7 +5,7 @@
 # mia, johhny, sunny, dani
 # modi, rahul, trump, gandhiji
 # no offence. Made for fun purpose only
-# Now in MafiaBot
+# Now in speedoBot
 
 from userbot import CMD_HELP
 from userbot.helpers.functions import (

@@ -11,7 +11,7 @@ from userbot.helpers.functions import deEmojify
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 
 CARBONLANG = "auto"
 LANG = "en"
@@ -71,7 +71,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Here's your carbon, \n Carbonised by MafiaBot",
+        caption="Here's your carbon, \n Carbonised by speedoBot",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )

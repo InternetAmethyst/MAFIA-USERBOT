@@ -187,7 +187,7 @@ async def _(dyno):
         thumb = speedo_logo
     except:
         return await dyno.reply(
-            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/MafiaBot_Chit_Chat)"
+            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/speedoBot_Chit_Chat)"
         )
     speedo_data = app.get_log()
     speedo_key = (

@@ -10,7 +10,7 @@ from userbot import *
 from userbot import bot as speedobot
 
 DELETE_TIMEOUT = 5
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
 h1m4n5hu0p = speedobot.uid
 speedo = f"[{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
@@ -23,7 +23,7 @@ async def send(event):
     message_id = event.message.id
     thumb = speedo_logo
     input_str = event.pattern_match.group(1)
-    omk = f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded by ≈** {speedo}\n\n⚡ **[LEGENDARY AF MAFIABOT](t.me/MafiaBot_Support)** ⚡"
+    omk = f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded by ≈** {speedo}\n\n⚡ **[LEGENDARY AF MAFIABOT](t.me/speedoBot_Support)** ⚡"
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
         lauda = await event.client.send_file(
@@ -71,7 +71,7 @@ async def install(event):
                             a = "__Installing...__"
                             b = 1
                         await event.edit(a)
-                    return await event.edit(f"✅ **Installed module** :- `{shortname}` \n✨ BY :- {speedo}\n\n{string}\n\n        ⚡ **[LEGENDARY AF MAFIABOT](t.me/MafiaBot_Support)** ⚡", link_preview=False)
+                    return await event.edit(f"✅ **Installed module** :- `{shortname}` \n✨ BY :- {speedo}\n\n{string}\n\n        ⚡ **[LEGENDARY AF MAFIABOT](t.me/speedoBot_Support)** ⚡", link_preview=False)
                 return await event.edit(f"Installed module `{os.path.basename(downloaded_file_name)}`")
             else:
                 os.remove(downloaded_file_name)

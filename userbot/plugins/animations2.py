@@ -5,7 +5,7 @@ from userbot import *
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 
 
 @bot.on(admin_cmd(pattern=r"boxs$", outgoing=True))
@@ -52,8 +52,8 @@ async def _(event):
         "**Process exited with** `status 143`",
         "**Starting process with command** `python3 -m stdborg`",
         "**State changed from starting to up**",
-        "__INFO:MafiaBot:Logged in as 557667062__",
-        "__INFO:MafiaBot:Successfully loaded all plugins__",
+        "__INFO:speedoBot:Logged in as 557667062__",
+        "__INFO:speedoBot:Successfully loaded all plugins__",
         "**Build Succeeded**",
     ]
     for i in animation_ttl:

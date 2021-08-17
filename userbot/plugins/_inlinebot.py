@@ -31,7 +31,7 @@ from userbot.Config import Config
 speedo_row = Config.BUTTONS_IN_HELP
 speedo_emoji = Config.EMOJI_IN_HELP
 # thats how a lazy guy imports
-# MafiaBot
+# speedoBot
 
 def button(page, modules):
     Row = speedo_row
@@ -66,7 +66,7 @@ def button(page, modules):
         ]
     )
     return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in MafiaBot channel to get this module work...
+    # Changing this line may give error in bot as i added some special cmds in speedoBot channel to get this module work...
 
     modules = CMD_HELP
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
@@ -75,12 +75,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@MafiaBot_Support":
+        if event.query.user_id == bot.uid and query == "@speedoBot_Support":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
                 f"Hey! Only use .help please",
-                text=f"**Running MafiaBot**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"**Running speedoBot**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -94,18 +94,18 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         elif event.text=='':
             result = builder.article(
-                "@MafiaBot_Support",
-                text="""**Hey! This is [MafiaBot.](https://t.me/MafiaBot_Support) \nYou can know more about me from the links given below 👇**""",
+                "@speedoBot_Support",
+                text="""**Hey! This is [speedoBot.](https://t.me/speedoBot_Support) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/MafiaBot_Support"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/speedoBot_Support"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/MafiaBot_Chit_Chat"
+                            "⚡ GROUP ⚡", "https://t.me/speedoBot_Chit_Chat"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/MafiaBotOP/MafiaBot"),
+                            "✨ REPO ✨", "https://github.com/speedoBotOP/speedoBot"),
                         custom.Button.url
                     (
                             "🔰 TUTORIAL 🔰", "https://youtu.be/aRFWP4_RCaE"
@@ -120,14 +120,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def page(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © speedoBot ™",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF** [MafiaBot](https://t.me/MafiaBot_Support) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Legenday AF** [speedoBot](https://t.me/speedoBot_Support) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
@@ -136,10 +136,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_speedo(event,
-              "⚜️MafiaBot Menu Provider Is now Closed⚜️\n\n         **[© MafiaBot ™](t.me/MafiaBot_Support)**", 5, link_preview=False
+              "⚜️speedoBot Menu Provider Is now Closed⚜️\n\n         **[© speedoBot ™](t.me/speedoBot_Support)**", 5, link_preview=False
             )
         else:
-            speedo_alert = "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™"
+            speedo_alert = "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © speedoBot ™"
             await event.answer(speedo_alert, cache_time=0, alert=True)
           
     @tgbot.on(
@@ -148,7 +148,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def Information(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © speedoBot ™",
                 cache_time=0,
                 alert=True,
             )
@@ -181,7 +181,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def commands(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © speedoBot ™",
                 cache_time=0,
                 alert=True,
             )

@@ -1,5 +1,5 @@
 # by uniborg...Thanks @spechide
-# Now will be used in MafialBot too....
+# Now will be used in speedolBot too....
 import asyncio
 import datetime
 from datetime import datetime
@@ -11,7 +11,7 @@ from userbot import ALIVE_NAME, speedoversion
 from speedobot.utils import admin_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 
 speedo = bot.uid
 
@@ -60,7 +60,7 @@ async def set_not_afk(event):
                 event.chat_id,
                 "Please set `PRIVATE_GROUP_BOT_API_ID` "
                 + "for the proper functioning of afk functionality "
-                + "Ask in @MafiaBot_Chit_Chat to get help setting this value\n\n `{}`".format(str(e)),
+                + "Ask in @speedoBot_Chit_Chat to get help setting this value\n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True,
             )

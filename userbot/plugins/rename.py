@@ -184,7 +184,7 @@ async def _(event):
                     event.chat_id,
                     downloaded_file_name,
                     thumb=thumb,
-                    caption="reuploaded by [MafiaBot](https://t.me/MafiaBot_Chit_Chat)",
+                    caption="reuploaded by [speedoBot](https://t.me/speedoBot_Chit_Chat)",
                     force_document=False,
                     allow_cache=False,
                     reply_to=event.message.id,

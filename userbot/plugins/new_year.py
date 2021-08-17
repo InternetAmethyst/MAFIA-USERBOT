@@ -1,7 +1,7 @@
 # Made By @Kraken_The_BadASS. Keep Credit if you are gonna copy paste it. LOL NOOBS....
 # Happy New Year plugin by Kraken_The_BadASS for Hellbot
 # Kangers keep credits...
-# Now in MafiaBot
+# Now in speedoBot
 
 import random
 # credits to kraken, john snow
@@ -15,7 +15,7 @@ from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 # credits to kraken, john snow
 from userbot.cmdhelp import CmdHelp
 # credits to kraken, john snow
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 # credits to kraken, john snow
 h1m4n5hu0p = bot.uid
 # credits to kraken, john snow
