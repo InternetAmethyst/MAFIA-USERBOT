@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 

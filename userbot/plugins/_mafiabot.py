@@ -1,13 +1,13 @@
-"""mafiaBot Help Command"""
+"""speedoBot Help Command"""
 
 from userbot import *
 from userbot import CMD_HELP
-from mafiabot.utils import *
+from speedobot.utils import *
 
 
 @bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
-async def mafiabott(event):
+async def speedobott(event):
     if event.fwd_from:
         return
     """ .plinfo cmd """

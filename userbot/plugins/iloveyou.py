@@ -2,7 +2,7 @@
 # KEEP CREDITS ELSE GAY
 
 import random, re
-from mafiabot.utils import admin_cmd
+from speedobot.utils import admin_cmd
 import asyncio
 from telethon import events
 

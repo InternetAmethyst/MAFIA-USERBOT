@@ -3,7 +3,7 @@ from datetime import datetime
 
 import requests
 
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -16,7 +16,7 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-    mafiaevent = await edit_or_reply(event, "Downloading to my local, for analysis  🙇")
+    speedoevent = await edit_or_reply(event, "Downloading to my local, for analysis  🙇")
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         required_file_name = await event.client.download_media(
@@ -27,11 +27,11 @@ async def _(event):
             Config.IBM_WATSON_CRED_URL is None
             or Config.IBM_WATSON_CRED_PASSWORD is None
         ):
-            await mafiaevent.edit(
+            await speedoevent.edit(
                 "You need to set the required ENV variables for this module. \nModule stopping"
             )
         else:
-            await mafiaevent.edit("Starting analysis, using IBM WatSon Speech To Text")
+            await speedoevent.edit("Starting analysis, using IBM WatSon Speech To Text")
             headers = {
                 "Content-Type": previous_message.media.document.mime_type,
             }
@@ -64,13 +64,13 @@ async def _(event):
                     string_to_show = "**Language : **`{}`\n**Time Taken : **`{} seconds`\n**No Results Found**".format(
                         lan, ms
                     )
-                await mafiaevent.edit(string_to_show)
+                await speedoevent.edit(string_to_show)
             else:
-                await mafiaevent.edit(r["error"])
+                await speedoevent.edit(r["error"])
             # now, remove the temporary file
             os.remove(required_file_name)
     else:
-        await mafiaevent.edit("Reply to a voice message, to get the relevant transcript.")
+        await speedoevent.edit("Reply to a voice message, to get the relevant transcript.")
 
 CmdHelp("stt").add_command(
   "stt", "<reply to voice>", "Gets the relevant transcript of replied voice message."

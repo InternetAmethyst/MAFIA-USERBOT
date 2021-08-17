@@ -12,7 +12,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
-from mafiabot.utils import admin_cmd
+from speedobot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"

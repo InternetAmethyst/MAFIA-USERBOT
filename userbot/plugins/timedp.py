@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
 from userbot.cmdhelp import CmdHelp
-from mafiabot.utils import admin_cmd
+from speedobot.utils import admin_cmd
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
 

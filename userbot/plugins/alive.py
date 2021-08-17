@@ -8,7 +8,7 @@
 import asyncio
 import random
 from telethon import events, version
-from userbot import ALIVE_NAME, mafiaversion
+from userbot import ALIVE_NAME, speedoversion
 from userbot.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.cmdhelp import CmdHelp
@@ -29,7 +29,7 @@ if ludosudo:
 else:
     sudou = "False"
 
-mafia = bot.uid
+speedo = bot.uid
 
 edit_time = 16
 """ =======================CONSTANTS====================== """
@@ -42,11 +42,11 @@ pm_caption = "  __**🔥🔥𝐌𝐀𝐅𝐈𝐀 𝐁𝐎𝐓 𝐈𝐒 𝐀𝐋�
 
 pm_caption += f"**━━━━━━━━━━━━━━━━━━━━**\n\n"
 pm_caption += (
-    f"                 👑𝐌𝐀𝐒𝐓𝐄𝐑👑\n  **『😈[{DEFAULTUSER}](tg://user?id={mafia})😈』**\n\n"
+    f"                 👑𝐌𝐀𝐒𝐓𝐄𝐑👑\n  **『😈[{DEFAULTUSER}](tg://user?id={speedo})😈』**\n\n"
 )
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
 pm_caption += f"┣•➳➠ `Telethon:` `{version.__version__}` \n"
-pm_caption += f"┣•➳➠ `Version:` `{mafiaversion}`\n"
+pm_caption += f"┣•➳➠ `Version:` `{speedoversion}`\n"
 pm_caption += f"┣•➳➠ `Sudo:` `{sudou}`\n"
 pm_caption += f"┣•➳➠ `Channel:` [ᴊᴏɪɴ](https://t.me/MafiaBot_Support)\n"
 pm_caption += f"┣•➳➠ `Creator:` [Himanshu](https://t.me/H1M4N5HU0P)\n"
@@ -112,5 +112,5 @@ async def amireallyalive(alive):
 CmdHelp("alive").add_command(
   "alive", None, "To check am i alive"
 ).add_command(
-  "mafia", None, "To check am i alive with your favorite alive pic"
+  "speedo", None, "To check am i alive with your favorite alive pic"
 ).add()

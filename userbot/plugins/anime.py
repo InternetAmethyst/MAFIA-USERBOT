@@ -1,16 +1,16 @@
 import re
 
-from mafiabot import bot
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from mafiabot.cmdhelp import CmdHelp
-from mafiabot.helpers.functions import deEmojify
+from speedobot import bot
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from speedobot.cmdhelp import CmdHelp
+from speedobot.helpers.functions import deEmojify
 
 
 @bot.on(admin_cmd(pattern="anime(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="anime(?: |$)(.*)", allow_sudo=True))
 async def nope(h1m4n5hu0p):
-    mafia = h1m4n5hu0p.pattern_match.group(1)
-    if not mafia:
+    speedo = h1m4n5hu0p.pattern_match.group(1)
+    if not speedo:
         if h1m4n5hu0p.is_reply:
             (await h1m4n5hu0p.get_reply_message()).message
         else:
@@ -18,7 +18,7 @@ async def nope(h1m4n5hu0p):
             )
             return
 
-    troll = await bot.inline_query("animedb_bot", f"{(deEmojify(mafia))}")
+    troll = await bot.inline_query("animedb_bot", f"{(deEmojify(speedo))}")
 
     await troll[0].click(
         h1m4n5hu0p.chat_id,

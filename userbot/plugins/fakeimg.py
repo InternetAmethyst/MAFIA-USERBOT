@@ -1,6 +1,6 @@
 import requests
 from userbot import CmdHelp
-from mafiabot.utils import edit_or_reply, admin_cmd, sudo_cmd
+from speedobot.utils import edit_or_reply, admin_cmd, sudo_cmd
 import os
 
 

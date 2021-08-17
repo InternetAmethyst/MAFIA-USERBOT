@@ -10,15 +10,15 @@ import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.functions import deEmojify
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))
 async def nope(h1m4n5hu0p):
-    mafia = h1m4n5hu0p.pattern_match.group(1)
-    if not mafia:
+    speedo = h1m4n5hu0p.pattern_match.group(1)
+    if not speedo:
         if h1m4n5hu0p.is_reply:
             (await h1m4n5hu0p.get_reply_message()).message
         else:
@@ -27,7 +27,7 @@ async def nope(h1m4n5hu0p):
             )
             return
 
-    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(mafia))}")
+    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(speedo))}")
 
     await troll[0].click(
         h1m4n5hu0p.chat_id,

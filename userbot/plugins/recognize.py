@@ -4,7 +4,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CMD_HELP
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -25,7 +25,7 @@ async def _(event):
     if reply_message.sender.bot:
         await edit_or_reply(event, "Reply to actual users message.")
         return
-    mafia = await edit_or_reply(event, "recognizeing this media")
+    speedo = await edit_or_reply(event, "recognizeing this media")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -35,15 +35,15 @@ async def _(event):
             response = await response
         except YouBlockedUserError:
             await event.reply("unblock @Rekognition_Bot and try again")
-            await mafia.delete()
+            await speedo.delete()
             return
         if response.text.startswith("See next message."):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=461083923)
             )
             response = await response
-            mafia = response.message.message
-            await edit_or_reply(event, mafia)
+            speedo = response.message.message
+            await edit_or_reply(event, speedo)
 
         else:
             await edit_or_reply(event, "sorry, I couldnt find it")

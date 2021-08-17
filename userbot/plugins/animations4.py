@@ -1,6 +1,6 @@
 import asyncio
 
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -101,9 +101,9 @@ async def _(event):
         
 @bot.on(admin_cmd(pattern="istar$", outgoing=True))
 @bot.on(sudo_cmd(pattern="istar$", allow_sudo=True))
-async def ammastar(mafiastar):
+async def ammastar(speedostar):
   
-    if mafiastar.fwd_from:
+    if speedostar.fwd_from:
       
         return
       
@@ -111,7 +111,7 @@ async def ammastar(mafiastar):
     
     animation_ttl = range(0, 11)
     
-    await edit_or_reply(mafiastar, "I am A Star")
+    await edit_or_reply(speedostar, "I am A Star")
     
     animation_chars = [
         "I Party like a rockstar",
@@ -125,7 +125,7 @@ async def ammastar(mafiastar):
       
         await asyncio.sleep(animation_interval)
         
-        await mafiastar.edit(animation_chars[i % 11])
+        await speedostar.edit(animation_chars[i % 11])
     
         
 @bot.on(admin_cmd(pattern=r"lmoon", outgoing=True))

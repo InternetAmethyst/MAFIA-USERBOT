@@ -9,7 +9,7 @@ import urllib
 import requests
 
 from userbot import *
-from mafiabot.utils import *
+from speedobot.utils import *
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("boobs$"))

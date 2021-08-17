@@ -1,5 +1,5 @@
 from userbot import ALIVE_NAME, CMD_HELP
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
@@ -271,7 +271,7 @@ L = (
     "╬═╬ \n"
     "╬═╬ \n"
     "╬═╬ \n"
-    "╬═╬ mafiao, My Friend :D \n"
+    "╬═╬ speedoo, My Friend :D \n"
     "╬═╬☻/ \n"
     "╬═╬/▌ \n"
     "╬═╬/ \\n"
@@ -526,12 +526,12 @@ async def bluedevildog(dog):
     await edit_or_reply(dog, J)
 
 
-@bot.on(admin_cmd(pattern=r"mafiao$"))
-@bot.on(sudo_cmd(pattern="mafiao$", allow_sudo=True))
-async def bluedevilmafiao(mafiao):
-    if mafiao.fwd_from:
+@bot.on(admin_cmd(pattern=r"speedoo$"))
+@bot.on(sudo_cmd(pattern="speedoo$", allow_sudo=True))
+async def bluedevilspeedoo(speedoo):
+    if speedoo.fwd_from:
         return
-    await edit_or_reply(mafiao, K)
+    await edit_or_reply(speedoo, K)
 
 
 @bot.on(admin_cmd(pattern=r"hmf$"))
@@ -617,7 +617,7 @@ CmdHelp("arts").add_command(
 ).add_command(
   'dog', None, 'Use and see'
 ).add_command(
-  'mafiao', None, 'Use and see'
+  'speedoo', None, 'Use and see'
 ).add_command(
   'hmf', None, 'Use and see'
 ).add_command(

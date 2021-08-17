@@ -4,7 +4,7 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @bot.on(admin_cmd(pattern=r"mmf ?(.*)"))

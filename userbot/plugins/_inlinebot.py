@@ -25,16 +25,16 @@ from telethon.tl.functions.channels import JoinChannelRequest
 
 from userbot import *
 from userbot.cmdhelp import *
-from mafiabot.utils import *
+from speedobot.utils import *
 from userbot.Config import Config
 
-mafia_row = Config.BUTTONS_IN_HELP
-mafia_emoji = Config.EMOJI_IN_HELP
+speedo_row = Config.BUTTONS_IN_HELP
+speedo_emoji = Config.EMOJI_IN_HELP
 # thats how a lazy guy imports
 # MafiaBot
 
 def button(page, modules):
-    Row = mafia_row
+    Row = speedo_row
     Column = 3
 
     modules = sorted([modul for modul in modules if not modul.startswith("_")])
@@ -47,7 +47,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"{mafia_emoji} " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"{speedo_emoji} " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -55,13 +55,13 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏰᎯᏣᏦ {mafia_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+               f"◀️ ᏰᎯᏣᏦ {speedo_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{mafia_emoji} ❌ {mafia_emoji}•", data="close"
+               f"•{speedo_emoji} ❌ {speedo_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{mafia_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"{speedo_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
@@ -135,12 +135,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await delete_mafia(event,
+            await delete_speedo(event,
               "⚜️MafiaBot Menu Provider Is now Closed⚜️\n\n         **[© MafiaBot ™](t.me/MafiaBot_Support)**", 5, link_preview=False
             )
         else:
-            mafia_alert = "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™"
-            await event.answer(mafia_alert, cache_time=0, alert=True)
+            speedo_alert = "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™"
+            await event.answer(speedo_alert, cache_time=0, alert=True)
           
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))

@@ -13,7 +13,7 @@ from requests import get
 from userbot.cmdhelp import CmdHelp
 
 from userbot import *
-from mafiabot.utils import *
+from speedobot.utils import *
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (

@@ -6,7 +6,7 @@ import os
 import sys
 import traceback
 
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import *
 from userbot.cmdhelp import CmdHelp
 
@@ -18,17 +18,17 @@ async def _(event):
     cmd = "".join(event.text.split(maxsplit=1)[1:])
     if not cmd:
         return await edit_delete(event, "`What should i execute?..`")
-    mafiaevent = await edit_or_reply(event, "`Executing.....`")
-    process = await asyncio.create_subprocess_smafia(
+    speedoevent = await edit_or_reply(event, "`Executing.....`")
+    process = await asyncio.create_subprocess_sspeedo(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
     result = str(stdout.decode().strip()) + str(stderr.decode().strip())
-    mafiauser = await event.client.get_me()
-    if mafiauser.username:
-        curruser = mafiauser.username
+    speedouser = await event.client.get_me()
+    if speedouser.username:
+        curruser = speedouser.username
     else:
-        curruser = "mafiabot"
+        curruser = "speedobot"
     uid = os.geteuid()
     if uid == 0:
         cresult = f"`{curruser}:~#` `{cmd}`\n`{result}`"
@@ -55,7 +55,7 @@ async def _(event):
     cmd = "".join(event.text.split(maxsplit=1)[1:])
     if not cmd:
         return await edit_delete(event, "`What should i run ?..`")
-    mafiaevent = await edit_or_reply(event, "`Running ...`")
+    speedoevent = await edit_or_reply(event, "`Running ...`")
     old_stderr = sys.stderr
     old_stdout = sys.stdout
     redirected_output = sys.stdout = io.StringIO()
@@ -80,7 +80,7 @@ async def _(event):
         evaluation = "Success"
     final_output = f"**•  Eval : **\n`{cmd}` \n\n**•  Result : **\n`{evaluation}` \n"
     await edit_or_reply(
-        mafiaevent,
+        speedoevent,
         text=final_output,
         aslink=True,
         linktext=f"**•  Eval : **\n`{cmd}` \n\n**•  Result : **\n",

@@ -1,4 +1,4 @@
-from mafiabot.utils import *
+from speedobot.utils import *
 from userbot.cmdhelp import CmdHelp
 
 

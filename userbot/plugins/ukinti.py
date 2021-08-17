@@ -12,7 +12,7 @@ from telethon.tl.types import (
     UserStatusOnline,
     UserStatusRecently,
 )
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 

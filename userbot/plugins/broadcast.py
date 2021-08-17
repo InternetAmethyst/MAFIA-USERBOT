@@ -5,7 +5,7 @@ import base64
 from asyncio import sleep
 
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import BOTLOG, BOTLOG_CHATID
 from userbot.helpers.format import parse_pre
 from userbot.plugins.sql_helper import broadcast_sql as sql
@@ -13,23 +13,23 @@ from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="sendto(?: |$)(.*)", command="sendto"))
 @bot.on(sudo_cmd(pattern="sendto(?: |$)(.*)", command="sendto", allow_sudo=True))
-async def mafiabroadcast_send(event):
+async def speedobroadcast_send(event):
     if event.fwd_from:
         return
-    mafiainput_str = event.pattern_match.group(1)
-    if not mafiainput_str:
+    speedoinput_str = event.pattern_match.group(1)
+    if not speedoinput_str:
         return await edit_delete(
             event, "To which category should i send this message", parse_mode=parse_pre
         )
     reply = await event.get_reply_message()
-    mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    speedo = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     if not reply:
         return await edit_delete(
             event, "what should i send to to this category ?", parse_mode=parse_pre
         )
-    keyword = mafiainput_str.lower()
+    keyword = speedoinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
-    group_ = Get(mafia)
+    group_ = Get(speedo)
     if no_of_chats == 0:
         return await edit_delete(
             event,
@@ -37,7 +37,7 @@ async def mafiabroadcast_send(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    mafiaevent = await edit_or_reply(
+    speedoevent = await edit_or_reply(
         event,
         "sending this message to all groups in the category",
         parse_mode=parse_pre,
@@ -57,7 +57,7 @@ async def mafiabroadcast_send(event):
             LOGS.info(str(e))
         await sleep(0.5)
     resultext = f"`The message was sent to {i} chats out of {no_of_chats} chats in category {keyword}.`"
-    await mafiaevent.edit(resultext)
+    await speedoevent.edit(resultext)
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -68,23 +68,23 @@ async def mafiabroadcast_send(event):
 
 @bot.on(admin_cmd(pattern="fwdto(?: |$)(.*)", command="fwdto"))
 @bot.on(sudo_cmd(pattern="fwdto(?: |$)(.*)", command="fwdto", allow_sudo=True))
-async def mafiabroadcast_send(event):
+async def speedobroadcast_send(event):
     if event.fwd_from:
         return
-    mafiainput_str = event.pattern_match.group(1)
-    if not mafiainput_str:
+    speedoinput_str = event.pattern_match.group(1)
+    if not speedoinput_str:
         return await edit_delete(
             event, "To which category should i send this message", parse_mode=parse_pre
         )
     reply = await event.get_reply_message()
-    mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    speedo = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     if not reply:
         return await edit_delete(
             event, "what should i send to to this category ?", parse_mode=parse_pre
         )
-    keyword = mafiainput_str.lower()
+    keyword = speedoinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
-    group_ = Get(mafia)
+    group_ = Get(speedo)
     if no_of_chats == 0:
         return await edit_delete(
             event,
@@ -92,7 +92,7 @@ async def mafiabroadcast_send(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    mafiaevent = await edit_or_reply(
+    speedoevent = await edit_or_reply(
         event,
         "sending this message to all groups in the category",
         parse_mode=parse_pre,
@@ -112,7 +112,7 @@ async def mafiabroadcast_send(event):
             LOGS.info(str(e))
         await sleep(0.5)
     resultext = f"`The message was sent to {i} chats out of {no_of_chats} chats in category {keyword}.`"
-    await mafiaevent.edit(resultext)
+    await speedoevent.edit(resultext)
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -123,15 +123,15 @@ async def mafiabroadcast_send(event):
 
 @bot.on(admin_cmd(pattern="addto(?: |$)(.*)", command="addto"))
 @bot.on(sudo_cmd(pattern="addto(?: |$)(.*)", command="addto", allow_sudo=True))
-async def mafiabroadcast_add(event):
+async def speedobroadcast_add(event):
     if event.fwd_from:
         return
-    mafiainput_str = event.pattern_match.group(1)
-    if not mafiainput_str:
+    speedoinput_str = event.pattern_match.group(1)
+    if not speedoinput_str:
         return await edit_delete(
             event, "In which category should i add this chat", parse_mode=parse_pre
         )
-    keyword = mafiainput_str.lower()
+    keyword = speedoinput_str.lower()
     check = sql.is_in_broadcastlist(keyword, event.chat_id)
     if check:
         return await edit_delete(
@@ -161,15 +161,15 @@ async def mafiabroadcast_add(event):
 
 @bot.on(admin_cmd(pattern="rmfrom(?: |$)(.*)", command="rmfrom"))
 @bot.on(sudo_cmd(pattern="rmfrom(?: |$)(.*)", command="rmfrom", allow_sudo=True))
-async def mafiabroadcast_remove(event):
+async def speedobroadcast_remove(event):
     if event.fwd_from:
         return
-    mafiainput_str = event.pattern_match.group(1)
-    if not mafiainput_str:
+    speedoinput_str = event.pattern_match.group(1)
+    if not speedoinput_str:
         return await edit_delete(
             event, "From which category should i remove this chat", parse_mode=parse_pre
         )
-    keyword = mafiainput_str.lower()
+    keyword = speedoinput_str.lower()
     check = sql.is_in_broadcastlist(keyword, event.chat_id)
     if not check:
         return await edit_delete(
@@ -199,17 +199,17 @@ async def mafiabroadcast_remove(event):
 
 @bot.on(admin_cmd(pattern="list(?: |$)(.*)", command="list"))
 @bot.on(sudo_cmd(pattern="list(?: |$)(.*)", command="list", allow_sudo=True))
-async def mafiabroadcast_list(event):
+async def speedobroadcast_list(event):
     if event.fwd_from:
         return
-    mafiainput_str = event.pattern_match.group(1)
-    if not mafiainput_str:
+    speedoinput_str = event.pattern_match.group(1)
+    if not speedoinput_str:
         return await edit_delete(
             event,
             "Which category Chats should i list ?\nCheck .listall",
             parse_mode=parse_pre,
         )
-    keyword = mafiainput_str.lower()
+    keyword = speedoinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
     if no_of_chats == 0:
         return await edit_delete(
@@ -218,7 +218,7 @@ async def mafiabroadcast_list(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    mafiaevent = await edit_or_reply(
+    speedoevent = await edit_or_reply(
         event, f"Fetching info of the category {keyword}", parse_mode=parse_pre
     )
     resultlist = f"**The category '{keyword}' have '{no_of_chats}' chats and these are listed below :**\n\n"
@@ -237,12 +237,12 @@ async def mafiabroadcast_list(event):
             errorlist += f" 👉 __This id {int(chat)} in database probably you may left the chat/channel or may be invalid id.\
                             \nRemove this id from the database by using this command__ `.frmfrom {keyword} {int(chat)}` \n\n"
     finaloutput = resultlist + errorlist
-    await edit_or_reply(mafiaevent, finaloutput)
+    await edit_or_reply(speedoevent, finaloutput)
 
 
 @bot.on(admin_cmd(pattern="listall$", command="listall"))
 @bot.on(sudo_cmd(pattern="listall$", command="listall", allow_sudo=True))
-async def mafiabroadcast_list(event):
+async def speedobroadcast_list(event):
     if event.fwd_from:
         return
     if sql.num_broadcastlist_chats() == 0:
@@ -260,15 +260,15 @@ async def mafiabroadcast_list(event):
 
 @bot.on(admin_cmd(pattern="frmfrom(?: |$)(.*)", command="frmfrom"))
 @bot.on(sudo_cmd(pattern="frmfrom(?: |$)(.*)", command="frmfrom", allow_sudo=True))
-async def mafiabroadcast_remove(event):
+async def speedobroadcast_remove(event):
     if event.fwd_from:
         return
-    mafiainput_str = event.pattern_match.group(1)
-    if not mafiainput_str:
+    speedoinput_str = event.pattern_match.group(1)
+    if not speedoinput_str:
         return await edit_delete(
             event, "From which category should i remove this chat", parse_mode=parse_pre
         )
-    args = mafiainput_str.split(" ")
+    args = speedoinput_str.split(" ")
     if len(args) != 2:
         return await edit_delete(
             event,
@@ -320,22 +320,22 @@ async def mafiabroadcast_remove(event):
 
 @bot.on(admin_cmd(pattern="delc(?: |$)(.*)", command="delc"))
 @bot.on(sudo_cmd(pattern="delc(?: |$)(.*)", command="delc", allow_sudo=True))
-async def mafiabroadcast_delete(event):
+async def speedobroadcast_delete(event):
     if event.fwd_from:
         return
-    mafiainput_str = event.pattern_match.group(1)
-    check1 = sql.num_broadcastlist_chat(mafiainput_str)
+    speedoinput_str = event.pattern_match.group(1)
+    check1 = sql.num_broadcastlist_chat(speedoinput_str)
     if check1 < 1:
         return await edit_delete(
             event,
-            f"Are you sure that there is category {mafiainput_str}",
+            f"Are you sure that there is category {speedoinput_str}",
             parse_mode=parse_pre,
         )
     try:
-        sql.del_keyword_broadcastlist(mafiainput_str)
+        sql.del_keyword_broadcastlist(speedoinput_str)
         await edit_or_reply(
             event,
-            f"Successfully deleted the category {mafiainput_str}",
+            f"Successfully deleted the category {speedoinput_str}",
             parse_mode=parse_pre,
         )
     except Exception as e:

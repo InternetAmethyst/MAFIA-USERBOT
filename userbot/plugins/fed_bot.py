@@ -12,10 +12,10 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon import functions, types, events
-from mafiabot import CmdHelp, bot as mafiabot
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
-from mafiabot.Config import Config
-from mafiabot.plugins.sql_helper.fban_sql import (
+from speedobot import CmdHelp, bot as speedobot
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from speedobot.Config import Config
+from speedobot.plugins.sql_helper.fban_sql import (
     add_channel,
     get_all_channels,
     in_channels,
@@ -24,14 +24,14 @@ from mafiabot.plugins.sql_helper.fban_sql import (
 
 logs_id = Config.FBAN_LOGGER_GROUP
 bot = "@MissRose_bot"
-mafia_logo = "./H1M4N5HU0P/mafiabot_logo.jpg"
+speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
 # Keep all credits pls
 # madewith great effort by @HeisenbergTheDanger
 # modified by @kraken_the_badass for fbans
 
 
-@mafiabot.on(admin_cmd(pattern="fban ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="fban ?(.*)"))
+@speedobot.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,8 +144,8 @@ async def _(event):
                 except BaseException:
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")# Written by @HeisenbergTheDanger
 
-@mafiabot.on(admin_cmd(pattern="unfban ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="unfban ?(.*)"))
+@speedobot.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -259,8 +259,8 @@ async def _(event):
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")
 
 
-@mafiabot.on(admin_cmd(pattern=r"fadd ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern=r"fadd ?(.*)"))
+@speedobot.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -300,8 +300,8 @@ async def add_ch(event):
         await event.delete()
 
 
-@mafiabot.on(admin_cmd(pattern=r"fremove ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern=r"fremove ?(.*)"))
+@speedobot.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -329,8 +329,8 @@ async def remove_ch(event):
         await event.delete()
 
 
-@mafiabot.on(admin_cmd(pattern="fgroups"))
-@mafiabot.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="fgroups"))
+@speedobot.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
 async def list(event):
     if event.fwd_from:
         return
@@ -356,8 +356,8 @@ async def list(event):
         await eor(event, msg)
 
 
-@mafiabot.on(admin_cmd(pattern="fsearch ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="fsearch ?(.*)"))
+@speedobot.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
 async def search(event):
     if event.fwd_from:
         return
@@ -377,12 +377,12 @@ async def search(event):
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
-@mafiabot.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
-@mafiabot.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
+@speedobot.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    mafia_input = event.pattern_match.group(1)
+    speedo_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await eor(event, "`Making new fed...`")
     async with borg.conversation(chat) as conv:
@@ -390,7 +390,7 @@ async def _(event):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=609517172)
             )
-            await event.client.send_message(chat, f"/newfed {mafia_input}")
+            await event.client.send_message(chat, f"/newfed {speedo_input}")
             response = await response
         except YouBlockedUserError:
             await eor(event, "`Please unblock` @MissRose_Bot `and try again`")
@@ -403,18 +403,18 @@ async def _(event):
             await eor(event, f"{response.message.message}")
 
 
-@mafiabot.on(admin_cmd(pattern="renamefed ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="renamefed ?(.*)"))
+@speedobot.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    mafia_input = event.pattern_match.group(1)
+    speedo_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await event.edit("`Trying to rename your fed...`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=609517172))
-              await event.client.send_message(chat, f"/renamefed {mafia_input}")
+              await event.client.send_message(chat, f"/renamefed {speedo_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @MissRose_Bot")
@@ -424,13 +424,13 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@mafiabot.on(admin_cmd(pattern="fstat ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="fstat ?(.*)"))
+@speedobot.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    mafia = await event.edit("`Collecting fstat....`")
-    thumb = mafia_logo
+    speedo = await event.edit("`Collecting fstat....`")
+    thumb = speedo_logo
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         lavde = str(previous_message.sender_id)
@@ -439,7 +439,7 @@ async def _(event):
         lavde = event.pattern_match.group(1)
         user = lavde
     if lavde == "":
-        await mafia.edit(
+        await speedo.edit(
             "`Need username/id to check fstat`"
         )
         return
@@ -454,7 +454,7 @@ async def _(event):
                     await massive.click(0)
                     await asyncio.sleep(2)
                     massive = await conv.get_response()
-                    await mafiabot.send_file(
+                    await speedobot.send_file(
                         event.chat_id,
                         massive,
                         thumb=thumb,
@@ -464,15 +464,15 @@ async def _(event):
                     await borg.send_message(event.chat_id, massive.text)
                 await event.delete()
             except YouBlockedUserError:
-                await mafia.edit("`Please Unblock` @MissRose_Bot")
+                await speedo.edit("`Please Unblock` @MissRose_Bot")
 
 
-@mafiabot.on(admin_cmd(pattern="fedinfo ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
+@speedobot.on(admin_cmd(pattern="fedinfo ?(.*)"))
+@speedobot.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    mafia = await eor(event, "`Fetching fed info.... please wait`")
+    speedo = await eor(event, "`Fetching fed info.... please wait`")
     lavde = event.pattern_match.group(1)
     async with borg.conversation(bot) as conv:
         try:
@@ -480,9 +480,9 @@ async def _(event):
             await conv.get_response()
             await conv.send_message("/fedinfo " + lavde)
             massive = await conv.get_response()
-            await mafia.edit(massive.text + "\n\n**LEGENDARY_AF_MAFIABOT**")
+            await speedo.edit(massive.text + "\n\n**LEGENDARY_AF_MAFIABOT**")
         except YouBlockedUserError:
-            await mafia.edit("`Please Unblock` @MissRose_Bot")
+            await speedo.edit("`Please Unblock` @MissRose_Bot")
             
 
 CmdHelp("fed_bot").add_command(

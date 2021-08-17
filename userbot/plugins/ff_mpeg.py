@@ -5,11 +5,11 @@ import os
 import time
 from datetime import datetime
 
-from mafiabot.utils import admin_cmd, sudo_cmd, progress
+from speedobot.utils import admin_cmd, sudo_cmd, progress
 from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
-FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/mafiabot.media.ffmpeg"
+FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/speedobot.media.ffmpeg"
 
 async def reply_id(event):
     reply_to_id = None
@@ -53,22 +53,22 @@ async def ff_mpeg_trim_cmd(event):
             media = media_type(reply_message)
             if media not in ["Video", "Audio", "Voice", "Round Video", "Gif"]:
                 return await edit_delete(event, "`Only media files are supported`", 5)
-            mafiaevent = await edit_or_reply(event, "`Saving the file...`")
+            speedoevent = await edit_or_reply(event, "`Saving the file...`")
             try:
                 c_time = time.time()
                 downloaded_file_name = await event.client.download_media(
                     reply_message,
                     FF_MPEG_DOWN_LOAD_MEDIA_PATH,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, mafiaevent, c_time, "trying to download")
+                        progress(d, t, speedoevent, c_time, "trying to download")
                     ),
                 )
             except Exception as e:
-                await mafiaevent.edit(str(e))
+                await speedoevent.edit(str(e))
             else:
                 end = datetime.now()
                 ms = (end - start).seconds
-                await mafiaevent.edit(
+                await speedoevent.edit(
                     f"Saved file to `{downloaded_file_name}` in `{ms}` seconds."
                 )
         else:
@@ -92,7 +92,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         return
     reply_to_id = await reply_id(event)
-    mafiaevent = await edit_or_reply(event, "`Triming the media......`")
+    speedoevent = await edit_or_reply(event, "`Triming the media......`")
     current_message_text = event.raw_text
     cmt = current_message_text.split(" ")
     start = datetime.now()
@@ -107,7 +107,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                mafiaevent, f"**Error : **`Can't complete the process`"
+                speedoevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -120,12 +120,12 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mafiaevent, c_time, "trying to upload")
+                    progress(d, t, speedoevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(mafiaevent, f"**Error : **`{e}`")
+            return await edit_delete(speedoevent, f"**Error : **`{e}`")
     elif len(cmt) == 2:
         # output should be image
         cmd, start_time = cmt
@@ -134,7 +134,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                mafiaevent, f"**Error : **`Can't complete the process`"
+                speedoevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -147,18 +147,18 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=event.message.id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mafiaevent, c_time, "trying to upload")
+                    progress(d, t, speedoevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(mafiaevent, f"**Error : **`{e}`")
+            return await edit_delete(speedoevent, f"**Error : **`{e}`")
     else:
-        await edit_delete(mafiaevent, "RTFM")
+        await edit_delete(speedoevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(mafiaevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(speedoevent, f"`Completed Process in {ms} seconds`", 3)
 
 
 @bot.on(admin_cmd(pattern="atrim"))
@@ -173,7 +173,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         return
     reply_to_id = await reply_id(event)
-    mafiaevent = await edit_or_reply(event, "`Triming the media...........`")
+    speedoevent = await edit_or_reply(event, "`Triming the media...........`")
     current_message_text = event.raw_text
     cmt = current_message_text.split(" ")
     start = datetime.now()
@@ -192,7 +192,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                mafiaevent, f"**Error : **`Can't complete the process`"
+                speedoevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -205,18 +205,18 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mafiaevent, c_time, "trying to upload")
+                    progress(d, t, speedoevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(mafiaevent, f"**Error : **`{e}`")
+            return await edit_delete(speedoevent, f"**Error : **`{e}`")
     else:
-        await edit_delete(mafiaevent, "RTFM")
+        await edit_delete(speedoevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(mafiaevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(speedoevent, f"`Completed Process in {ms} seconds`", 3)
 
 
 @bot.on(admin_cmd(pattern="ffmpegclear$"))

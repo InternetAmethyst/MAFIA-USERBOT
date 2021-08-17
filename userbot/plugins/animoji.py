@@ -2,7 +2,7 @@ import asyncio
 from collections import deque
 
 from userbot import CMD_HELP
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 
@@ -144,7 +144,7 @@ async def _(event):
 
 import asyncio
 
-from mafiabot.utils import admin_cmd
+from speedobot.utils import admin_cmd
 
 
 @bot.on(admin_cmd(pattern=f"lovestory", outgoing=True))

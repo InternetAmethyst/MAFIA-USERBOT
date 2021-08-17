@@ -4,7 +4,7 @@
 from telethon.tl.functions.messages import SaveDraftRequest
 
 from userbot import CMD_HELP
-from mafiabot.utils import admin_cmd, sudo_cmd
+from speedobot.utils import admin_cmd, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

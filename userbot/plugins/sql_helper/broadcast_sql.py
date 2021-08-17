@@ -9,7 +9,7 @@ from . import BASE, SESSION
 
 
 class MafiaBroadcast(BASE):
-    __tablename__ = "mafiabroadcast"
+    __tablename__ = "speedobroadcast"
     keywoard = Column(UnicodeText, primary_key=True)
     group_id = Column(String(14), primary_key=True, nullable=False)
 

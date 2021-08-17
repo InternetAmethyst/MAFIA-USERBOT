@@ -6,7 +6,7 @@ import os
 import time
 from datetime import datetime
 
-from mafiabot.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
+from speedobot.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 

@@ -17,7 +17,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot.cmdhelp import CmdHelp
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 # ================= CONSTANT =================
 
@@ -811,7 +811,7 @@ async def smrk(smk):
         message = textx
         message = str(message.message)
     if message == "dele":
-        await edit_or_reply(smk, message + "te the mafia" + "ツ")
+        await edit_or_reply(smk, message + "te the speedo" + "ツ")
         await edit_or_reply(smk, "ツ")
     else:
         smirk = " ツ"
