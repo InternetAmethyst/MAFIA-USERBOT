@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "Mafia"
+          find: "userbot"
 
-          replace: "speedo"
+          replace: "Speedo"
 
       - name: Create Pull Request
 
