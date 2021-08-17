@@ -19,7 +19,7 @@ jobs:
 
         with:
 
-          find: "mafia"
+          find: "Mafia"
 
           replace: "speedo"
 
