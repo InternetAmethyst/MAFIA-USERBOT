@@ -1,4 +1,4 @@
-"""night Plugin for Sensible_userbot
+"""night Plugin for Sensible_Speedo
 Syntax: .night REASON"""
 
 import asyncio
@@ -7,9 +7,9 @@ import datetime
 from telethon import events
 from telethon.tl import functions, types
 
-from userbot import ALIVE_NAME
+from Speedo import ALIVE_NAME
 from speedobot.utils import admin_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 global USER_night  # pylint:disable=E0602
 global night_time  # pylint:disable=E0602
@@ -95,7 +95,7 @@ async def on_night(event):
     night_since = "**a while ago**"
     current_message_text = event.message.message.lower()
     if "night" in current_message_text:
-        # userbot's should not reply to other userbot's
+        # Speedo's should not reply to other Speedo's
         # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
         return False
     if USER_night and not (await event.get_sender()).bot:  # pylint:disable=E0602

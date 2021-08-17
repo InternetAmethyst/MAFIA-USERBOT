@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from userbot.plugins.sql_helper import BASE, SESSION
+from Speedo.plugins.sql_helper import BASE, SESSION
 
 
 class PMPermit(BASE):

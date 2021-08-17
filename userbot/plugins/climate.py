@@ -15,9 +15,9 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from userbot import CMD_HELP
+from Speedo import CMD_HELP
 from speedobot.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
@@ -148,7 +148,7 @@ async def get_weather(weather):
 async def set_default_city(city):
     if city.fwd_from:
         return
-    """ For .ctime command, change the default userbot country for date and time commands. """
+    """ For .ctime command, change the default Speedo country for date and time commands. """
     if not OWM_API:
         await edit_or_reply(
             city, "`Get an API key from` https://openweathermap.org/ `first.`"

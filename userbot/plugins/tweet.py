@@ -7,8 +7,8 @@
 # no offence. Made for fun purpose only
 # Now in speedoBot
 
-from userbot import CMD_HELP
-from userbot.helpers.functions import (
+from Speedo import CMD_HELP
+from Speedo.helpers.functions import (
     changemymind,
     deEmojify,
     kannagen,
@@ -22,7 +22,7 @@ from userbot.helpers.functions import (
     dani,
 )
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern=r"tweet(?: |$)(.*)"))

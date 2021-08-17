@@ -5,7 +5,7 @@ from telethon.tl.types import InputMessagesFilterDocument
 
 from speedobot.utils import admin_cmd, load_module
 from var import Var
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @borg.on(admin_cmd(pattern="extdl$", outgoing=True))
 async def install(event):
@@ -19,7 +19,7 @@ async def install(event):
     for ixo in total_doxx:
         mxo = documentss[ixo].id
         downloaded_file_name = await event.client.download_media(
-            await borg.get_messages(chat, ids=mxo), "userbot/plugins/"
+            await borg.get_messages(chat, ids=mxo), "Speedo/plugins/"
         )
         if "(" not in downloaded_file_name:
             path1 = Path(downloaded_file_name)
@@ -54,7 +54,7 @@ async def install(event):
     for ixo in total_doxx:
         mxo = documentss[ixo].id
         downloaded_file_name = await event.client.download_media(
-            await borg.get_messages(chat, ids=mxo), "userbot/plugins/"
+            await borg.get_messages(chat, ids=mxo), "Speedo/plugins/"
         )
         if "(" not in downloaded_file_name:
             path1 = Path(downloaded_file_name)

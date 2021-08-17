@@ -4,7 +4,7 @@ import sys
 
 import git
 
-from userbot.Config import Config
+from Speedo.Config import Config
 from speedobot.utils import admin_cmd, sudo_cmd
 
 # -- Constants -- #

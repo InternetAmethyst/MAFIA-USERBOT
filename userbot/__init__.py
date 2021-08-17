@@ -3,8 +3,8 @@ import sys
 import time
 from telethon.sessions import StringSession
 from telethon import TelegramClient, events, sync
-from userbot.helpers import functions as simpdef
-from userbot.Config import Config
+from Speedo.helpers import functions as simpdef
+from Speedo.Config import Config
 from var import Var
 
 
@@ -209,6 +209,6 @@ AFKREASON = None
 SUDO_LIST = {}
 
 
-from userbot.helpers import *
-from userbot.helpers import functions as speedodef
-from userbot.cmdhelp import CmdHelp
+from Speedo.helpers import *
+from Speedo.helpers import functions as speedodef
+from Speedo.cmdhelp import CmdHelp

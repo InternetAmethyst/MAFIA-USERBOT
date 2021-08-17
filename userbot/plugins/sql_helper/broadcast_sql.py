@@ -1,5 +1,5 @@
-# credits goes to cat userbot
-# thanks to cat userbot
+# credits goes to cat Speedo
+# thanks to cat Speedo
 
 import threading
 

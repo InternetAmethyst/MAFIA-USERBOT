@@ -5,10 +5,10 @@ import os
 import heroku3
 import requests
 
-from userbot import CMD_HELP
-from userbot.Config import Config
+from Speedo import CMD_HELP
+from Speedo.Config import Config
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

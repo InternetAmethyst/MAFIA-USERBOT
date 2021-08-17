@@ -9,9 +9,9 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from userbot import CMD_HELP
+from Speedo import CMD_HELP
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern="voice (.*)"))

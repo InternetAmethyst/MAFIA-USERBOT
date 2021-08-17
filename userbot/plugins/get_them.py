@@ -7,7 +7,7 @@ from telethon.tl.types import (
 from telethon.utils import pack_bot_file_id
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="get_admins ?(.*)"))
 @bot.on(sudo_cmd(pattern="get_admins ?(.*)", allow_sudo=True))

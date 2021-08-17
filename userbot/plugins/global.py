@@ -16,8 +16,8 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                        MessageMediaPhoto)
 from speedobot.utils import register, errors_handler
 from speedobot.utils import admin_cmd
-from userbot import bot as borg
-from userbot.cmdhelp import CmdHelp
+from Speedo import bot as borg
+from Speedo.cmdhelp import CmdHelp
 
 async def get_full_user(event):  
     args = event.pattern_match.group(1).split(':', 1)
@@ -61,22 +61,22 @@ async def get_user_from_id(user, event):
         return None
     return user_obj
 @borg.on(admin_cmd(pattern="gpromote ?(.*)"))
-async def gben(userbot):
-    mb = speedo = userbot
+async def gben(Speedo):
+    mb = speedo = Speedo
     i = 0
     sender = await mb.get_sender()
-    me = await userbot.client.get_me()
+    me = await Speedo.client.get_me()
     await speedo.edit("`promoting...`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await userbot.get_chat()
-    if userbot.is_private:
-        user = userbot.chat
-        rank = userbot.pattern_match.group(1)
+    await Speedo.get_chat()
+    if Speedo.is_private:
+        user = Speedo.chat
+        rank = Speedo.pattern_match.group(1)
     else:
-        userbot.chat.title
+        Speedo.chat.title
     try:
-        user, rank = await get_full_user(userbot)
+        user, rank = await get_full_user(Speedo)
     except:
         pass
     if me == user:
@@ -89,7 +89,7 @@ async def gben(userbot):
         return await speedo.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         telchanel = [d.entity.id
-                     for d in await userbot.client.get_dialogs()
+                     for d in await Speedo.client.get_dialogs()
                      if (d.is_group or d.is_channel)
                      ]
         rgt = ChatAdminRights(add_admins=True,
@@ -100,7 +100,7 @@ async def gben(userbot):
                                    pin_messages=True)
         for x in telchanel:
           try:
-             await userbot.client(EditAdminRequest(x, user, rgt, rank))
+             await Speedo.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
              await speedo.edit(f"**Promoted in Chats **: `{i}`")
           except:
@@ -111,22 +111,22 @@ async def gben(userbot):
         f"**Globally promoted [{user.first_name}](tg://user?id={user.id})\n On Chats😏 : {i} **"
     )
 @borg.on(admin_cmd(pattern="gdemote ?(.*)"))
-async def gben(userbot):
-    mb = speedo = userbot
+async def gben(Speedo):
+    mb = speedo = Speedo
     i = 0
     sender = await mb.get_sender()
-    me = await userbot.client.get_me()
+    me = await Speedo.client.get_me()
     await speedo.edit("`demoting...`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await userbot.get_chat()
-    if userbot.is_private:
-        user = userbot.chat
-        rank = userbot.pattern_match.group(1)
+    await Speedo.get_chat()
+    if Speedo.is_private:
+        user = Speedo.chat
+        rank = Speedo.pattern_match.group(1)
     else:
-        userbot.chat.title
+        Speedo.chat.title
     try:
-        user, rank = await get_full_user(userbot)
+        user, rank = await get_full_user(Speedo)
     except:
         pass
     if me == user:
@@ -139,7 +139,7 @@ async def gben(userbot):
         return await speedo.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         telchanel = [d.entity.id
-                     for d in await userbot.client.get_dialogs()
+                     for d in await Speedo.client.get_dialogs()
                      if (d.is_group or d.is_channel)
                      ]
         rgt = ChatAdminRights(add_admins=None,
@@ -150,7 +150,7 @@ async def gben(userbot):
                                    pin_messages=None)
         for x in telchanel:
           try:
-             await userbot.client(EditAdminRequest(x, user, rgt, rank))
+             await Speedo.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
              await speedo.edit(f"**Demoted in Chats **: `{i}`")
           except:

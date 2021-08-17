@@ -10,7 +10,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with NiceGrill.  If not, see <https://www.gnu.org/licenses/>.
 
-# thanks to catuserbot
+# thanks to catSpeedo
 
 import json
 import logging
@@ -24,7 +24,7 @@ from fontTools.ttLib import TTFont
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from telethon.tl import functions, types
 
-from userbot.utils import utils
+from Speedo.utils import utils
 
 COLORS = [
     "#F07975",

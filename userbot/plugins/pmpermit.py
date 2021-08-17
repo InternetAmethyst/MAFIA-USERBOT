@@ -8,11 +8,11 @@ import time
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot.plugins.sql_helper import pmpermit_sql as pmpermit_sql
-from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, MAFIA_ID
-from userbot.Config import Config
+from Speedo.plugins.sql_helper import pmpermit_sql as pmpermit_sql
+from Speedo import ALIVE_NAME, CUSTOM_PMPERMIT, MAFIA_ID
+from Speedo.Config import Config
 from speedobot.utils import admin_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 PM_TRUE_FALSE = Config.PM_DATA
 
@@ -228,7 +228,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
         message_text.lower()
         if USER_BOT_NO_WARN == message_text:
-            # userbot's should not reply to other userbot's
+            # Speedo's should not reply to other Speedo's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return
         sender = await bot.get_entity(chat_id)
@@ -317,5 +317,5 @@ CmdHelp("pmpermit").add_command(
 ).add_command(
   "listallowed", None, "Gives you the list of allowed PM's list"
 ).add_command(
-  "set var PM_DATA", "DISABLE", "Turn off pm protection by your userbot. Your PM will not be protected."
+  "set var PM_DATA", "DISABLE", "Turn off pm protection by your Speedo. Your PM will not be protected."
 ).add()

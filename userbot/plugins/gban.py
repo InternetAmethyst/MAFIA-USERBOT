@@ -1,7 +1,7 @@
-from userbot import bot, CMD_HELP, ALIVE_NAME
+from Speedo import bot, CMD_HELP, ALIVE_NAME
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 import html
 from telethon import events
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -57,29 +57,29 @@ async def get_user_from_id(user, event):
 
 @bot.on(admin_cmd(pattern="gban ?(.*)"))
 @bot.on(sudo_cmd(pattern="gban ?(.*)", allow_sudo=True))
-async def gban(userbot):
-    if userbot.fwd_from:
+async def gban(Speedo):
+    if Speedo.fwd_from:
         return
-    ids = userbot
+    ids = Speedo
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
     if not sender.id == hum.id:
         speedobot = await edit_or_reply(ids, "Trying to gban this retard!")
     else:
         speedobot = await edit_or_reply(ids, "`Ok! Gbaning this piece of shit....`")
-    hum = await userbot.client.get_me()
+    hum = await Speedo.client.get_me()
     await speedobot.edit(f"`🔥Global Ban Iz Cumin💦.... Wait and watch nigga🚶`")
     my_mention = "[{}](tg://user?id={})".format(hum.first_name, hum.id)
     f"@{hum.username}" if hum.username else my_mention
-    await userbot.get_chat()
+    await Speedo.get_chat()
     a = b = 0
-    if userbot.is_private:
-        user = userbot.chat
-        reason = userbot.pattern_match.group(1)
+    if Speedo.is_private:
+        user = Speedo.chat
+        reason = Speedo.pattern_match.group(1)
     else:
-        userbot.chat.title
+        Speedo.chat.title
     try:
-        user, reason = await get_full_user(userbot)
+        user, reason = await get_full_user(Speedo)
     except:
         pass
     try:
@@ -93,21 +93,21 @@ async def gban(userbot):
                 f"`First Grow Some Balls To Gban My Creater🤫🚶`"
             )
         try:
-            from userbot.plugins.sql_helper.gmute_sql import gmute
+            from Speedo.plugins.sql_helper.gmute_sql import gmute
         except:
             pass
         try:
-            await userbot.client(BlockRequest(user))
+            await Speedo.client(BlockRequest(user))
         except:
             pass
-        testuserbot = [
+        testSpeedo = [
             d.entity.id
-            for d in await userbot.client.get_dialogs()
+            for d in await Speedo.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testuserbot:
+        for i in testSpeedo:
             try:
-                await userbot.client.edit_permissions(i, user, view_messages=False)
+                await Speedo.client.edit_permissions(i, user, view_messages=False)
                 a += 1
                 await speedobot.edit(f"Gbaning This retard🚶\n\n**Please Wait Few Minutes**😏")
             except:
@@ -125,29 +125,29 @@ async def gban(userbot):
 
 @bot.on(admin_cmd(pattern="ungban ?(.*)"))
 @bot.on(sudo_cmd(pattern="ungban ?(.*)", allow_sudo=True))
-async def gunban(userbot):
-    if userbot.fwd_from:
+async def gunban(Speedo):
+    if Speedo.fwd_from:
         return
-    ids = userbot
+    ids = Speedo
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
     if not sender.id == hum.id:
         speedobot = await edit_or_reply(ids, "`Trying to ungban this kid...`")
     else:
         speedobot = await edit_or_reply(ids, "`Ungban in progress...`")
-    hum = await userbot.client.get_me()
+    hum = await Speedo.client.get_me()
     await speedobot.edit(f"`Trying to ungban this kiddo...`")
     my_mention = "[{}](tg://user?id={})".format(hum.first_name, hum.id)
     f"@{hum.username}" if hum.username else my_mention
-    await userbot.get_chat()
+    await Speedo.get_chat()
     a = b = 0
-    if userbot.is_private:
-        user = userbot.chat
-        reason = userbot.pattern_match.group(1)
+    if Speedo.is_private:
+        user = Speedo.chat
+        reason = Speedo.pattern_match.group(1)
     else:
-        userbot.chat.title
+        Speedo.chat.title
     try:
-        user, reason = await get_full_user(userbot)
+        user, reason = await get_full_user(Speedo)
     except:
         pass
     try:
@@ -159,21 +159,21 @@ async def gunban(userbot):
         if user.id == 1212368262:
             return await speedobot.edit("**You need to grow some balls to gban / ungban my creator**")
         try:
-            from userbot.plugins.sql_helper.gmute_sql import ungmute
+            from Speedo.plugins.sql_helper.gmute_sql import ungmute
         except:
             pass
         try:
-            await userbot.client(UnblockRequest(user))
+            await Speedo.client(UnblockRequest(user))
         except:
             pass
-        testuserbot = [
+        testSpeedo = [
             d.entity.id
-            for d in await userbot.client.get_dialogs()
+            for d in await Speedo.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testuserbot:
+        for i in testSpeedo:
             try:
-                await userbot.client.edit_permissions(i, user, send_messages=True)
+                await Speedo.client.edit_permissions(i, user, send_messages=True)
                 a += 1
                 await speedobot.edit(f"Ok! Now Ungbaning this kiddo.\n\n**Please Wait Few Minutes**😏")
             except:
@@ -196,7 +196,7 @@ async def gunban(userbot):
 async def handler(h1m4n5hu0p): 
    if h1m4n5hu0p.user_joined or h1m4n5hu0p.user_added:      
        try:       	
-         from userbot.plugins.sql_helper.gmute_sql import is_gmuted
+         from Speedo.plugins.sql_helper.gmute_sql import is_gmuted
          guser = await h1m4n5hu0p.get_user()      
          gmuted = is_gmuted(guser.id)             
        except:      

@@ -6,9 +6,9 @@ Syntax: .ud Query"""
 import asyncurban
 from PyDictionary import PyDictionary
 
-from userbot import CMD_HELP
+from Speedo import CMD_HELP
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="ud (.*)"))
 @bot.on(sudo_cmd(pattern="ud (.*)", allow_sudo=True))

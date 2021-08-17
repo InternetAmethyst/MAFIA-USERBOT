@@ -8,9 +8,9 @@ import urllib
 
 import requests
 
-from userbot import *
+from Speedo import *
 from speedobot.utils import *
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("boobs$"))
 @bot.on(sudo_cmd(pattern="boobs$", allow_sudo=True))

@@ -6,7 +6,7 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 from speedobot.utils import admin_cmd
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
@@ -14,12 +14,12 @@ FONT_FILE_TO_USE = "Fonts/digital.ttf"
 
 @borg.on(admin_cmd(pattern=r"seconddp"))
 async def seconddp(event):
-    downloaded_file_name = "userbot/original_pic.png"
+    downloaded_file_name = "Speedo/original_pic.png"
     downloader = SmartDL(
         Var.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=False
     )
     downloader.start(blocking=False)
-    photo = "userbot/photo_pfp.png"
+    photo = "Speedo/photo_pfp.png"
     while not downloader.isFinished():
         pass
     counter = -30

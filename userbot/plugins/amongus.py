@@ -1,12 +1,12 @@
 # thanks to @Skastickers for stickers....
 # Among us.....
-# credits to catuserbot
+# credits to catSpeedo
 
 
 import asyncio
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
-from userbot import *
+from Speedo import *
 from speedobot.utils import *
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"

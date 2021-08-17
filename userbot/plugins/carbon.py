@@ -6,10 +6,10 @@ from urllib.parse import quote_plus
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from userbot import ALIVE_NAME, CMD_HELP
-from userbot.helpers.functions import deEmojify
+from Speedo import ALIVE_NAME, CMD_HELP
+from Speedo.helpers.functions import deEmojify
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 

@@ -4,7 +4,7 @@ import PIL.ImageOps
 from PIL import Image, ImageDraw, ImageFont
 
 from speedobot import CmdHelp
-from userbot.Config import Config
+from Speedo.Config import Config
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 TEMP_DIR = os.environ.get("TEMP_DIR", "./temp/")

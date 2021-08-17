@@ -4,7 +4,7 @@ import os
 import requests
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 def ocr_space_file(
     filename, overlay=False, api_key=Config.OCR_SPACE_API_KEY, language="eng"

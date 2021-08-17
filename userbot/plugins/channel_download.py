@@ -1,5 +1,5 @@
 """
-Telegram Channel Media Downloader Plugin for userbot.
+Telegram Channel Media Downloader Plugin for Speedo.
 usage: .geta channel_username [will  get all media from channel, tho there is limit of 3000 there to prevent API limits.]
        .getc number_of_messsages channel_username  
 By: @Zero_cool7870
@@ -7,9 +7,9 @@ By: @Zero_cool7870
 import os
 import subprocess
 
-from userbot import CMD_HELP
+from Speedo import CMD_HELP
 from speedobot.utils import admin_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @borg.on(admin_cmd(pattern=r"getc"))
 async def get_media(event):

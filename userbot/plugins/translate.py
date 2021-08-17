@@ -7,7 +7,7 @@ import emoji
 from googletrans import Translator
 
 from speedobot.utils import *
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="trt ?(.*)"))
 @bot.on(sudo_cmd(pattern="trt ?(.*)", allow_sudo=True))

@@ -9,11 +9,11 @@ from asyncio import sleep
 # credits to kraken, john snow
 import asyncio
 # credits to kraken, john snow
-from userbot import CMD_HELP, ALIVE_NAME
+from Speedo import CMD_HELP, ALIVE_NAME
 # credits to kraken, john snow
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 # credits to kraken, john snow
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 # credits to kraken, john snow
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 # credits to kraken, john snow

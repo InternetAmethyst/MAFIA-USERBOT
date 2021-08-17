@@ -1,6 +1,6 @@
 import time
 
-from userbot import ALIVE_NAME, StartTime, speedoversion
+from Speedo import ALIVE_NAME, StartTime, speedoversion
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon import events, version
 

@@ -6,9 +6,9 @@
 import random
 from asyncio import sleep
 import asyncio
-from userbot import CMD_HELP, ALIVE_NAME
+from Speedo import CMD_HELP, ALIVE_NAME
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 

@@ -1,6 +1,6 @@
 # Originally made by @rkpavi for @javes05
 # porting to hellbot by @kraken_the_badass...
-# first userbot to port javes song module...
+# first Speedo to port javes song module...
 # keep credit if u wanna kang...
 # else u are a gay...no doubt in that....
 # Now in speedoBot
@@ -9,10 +9,10 @@ import asyncio
 import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import bot
+from Speedo import bot
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
-from userbot.cmdhelp import CmdHelp
-from userbot.helpers.functions import deEmojify
+from Speedo.cmdhelp import CmdHelp
+from Speedo.helpers.functions import deEmojify
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))

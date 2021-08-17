@@ -2,8 +2,8 @@ import asyncio
 import io
 
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import bot as speedobot
-from userbot import ALIVE_NAME
+from Speedo import bot as speedobot
+from Speedo import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 speedo_logo = "./H1M4N5HU0P/speedobot_logo.jpg"
@@ -16,7 +16,7 @@ async def install(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
-    cmd = "ls userbot/plugins"
+    cmd = "ls Speedo/plugins"
     thumb = speedo_logo
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE

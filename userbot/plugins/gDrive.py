@@ -20,7 +20,7 @@ from oauth2client.file import Storage
 from telethon import events
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 # Path to token json file, it should be in same directory as script
 G_DRIVE_TOKEN_FILE = Var.TEMP_DOWNLOAD_DIRECTORY + "/auth_token.txt"

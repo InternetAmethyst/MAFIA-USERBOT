@@ -7,8 +7,8 @@ import math
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
-from userbot import CmdHelp
-from userbot import bot as speedobot
+from Speedo import CmdHelp
+from Speedo import bot as speedobot
 
 
 @speedobot.on(admin_cmd(pattern="sin ?(.*)"))

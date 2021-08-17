@@ -13,10 +13,10 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-#from userbot import CMD_HELP
-from userbot.Config import Config
+#from Speedo import CMD_HELP
+from Speedo.Config import Config
 from speedobot.utils import *
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",

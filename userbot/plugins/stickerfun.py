@@ -6,10 +6,10 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from userbot import bot
-from userbot.helpers.functions import deEmojify
+from Speedo import bot
+from Speedo.helpers.functions import deEmojify
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 # RegEx by https://t.me/c/1220993104/50065
 
@@ -61,7 +61,7 @@ async def sticklet(event):
             return
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
-    # delete the userbot command,
+    # delete the Speedo command,
     # i don't know why this is required
     await event.delete()
     sticktext = deEmojify(sticktext)

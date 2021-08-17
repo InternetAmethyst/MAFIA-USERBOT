@@ -16,7 +16,7 @@ from cowpy import cow
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 # ================= CONSTANT =================
@@ -423,7 +423,7 @@ HIT = [
 @bot.on(admin_cmd(pattern=r"(\w+)say (.*)"))
 @bot.on(sudo_cmd(pattern=r"(\w+)say (.*)", allow_sudo=True))
 async def univsaye(cowmsg):
-    """ For .cowsay module, userbot wrapper for cow which says things. """
+    """ For .cowsay module, Speedo wrapper for cow which says things. """
     if not cowmsg.text[0].isalpha() and cowmsg.text[0] not in ("/", "#", "@", "!"):
         arg = cowmsg.pattern_match.group(1).lower()
         text = cowmsg.pattern_match.group(2)
@@ -733,7 +733,7 @@ async def faces(owo):
 @bot.on(admin_cmd(pattern="react$", outgoing=True))
 @bot.on(sudo_cmd(pattern="react$", allow_sudo=True))
 async def react_meme(react):
-    """ Make your userbot react to everything. """
+    """ Make your Speedo react to everything. """
     if not react.text[0].isalpha() and react.text[0] not in ("/", "#", "@", "!"):
         await edit(react, random.choice(FACEREACTS))
 

@@ -17,21 +17,21 @@ from pathlib import Path
 from time import gmtime, strftime
 from typing import Tuple
 from telethon import functions, types
-from userbot import LOGS
+from Speedo import LOGS
 from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
-from userbot.helpers.tools import media_type
+from Speedo.helpers.tools import media_type
 
 from var import Var
 
-from userbot import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
-from userbot.helpers.exceptions import CancelProcess
-from userbot.Config import Config
+from Speedo import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
+from Speedo.helpers.exceptions import CancelProcess
+from Speedo.Config import Config
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
-    from userbot.Config import Config
+    from Speedo.Config import Config
 else:
     if os.path.exists("config.py"):
         from config import Development as Config
@@ -42,19 +42,19 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import userbot.utils
+        import Speedo.utils
 
-        path = Path(f"userbot/plugins/{shortname}.py")
-        name = "userbot.plugins.{}".format(shortname)
+        path = Path(f"Speedo/plugins/{shortname}.py")
+        name = "Speedo.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info("Successfully imported " + shortname)
     else:
-        import userbot.utils
+        import Speedo.utils
 
-        path = Path(f"userbot/plugins/{shortname}.py")
-        name = "userbot.plugins.{}".format(shortname)
+        path = Path(f"Speedo/plugins/{shortname}.py")
+        name = "Speedo.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -63,7 +63,7 @@ def load_module(shortname):
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
-        sys.modules["uniborg.util"] = userbot.utils
+        sys.modules["uniborg.util"] = Speedo.utils
         mod.Config = Config
         mod.borg = bot
         mod.speedobot = bot
@@ -71,13 +71,13 @@ def load_module(shortname):
         mod.delete_speedo = delete_speedo
         mod.media_type = media_type
         # support for speedobot originals
-        sys.modules["speedobot.utils"] = userbot.utils
-        sys.modules["speedobot"] = userbot
+        sys.modules["speedobot.utils"] = Speedo.utils
+        sys.modules["speedobot"] = Speedo
         # support for paperplaneextended
-        sys.modules["userbot.events"] = userbot.utils
+        sys.modules["Speedo.events"] = Speedo.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["userbot.plugins." + shortname] = mod
+        sys.modules["Speedo.plugins." + shortname] = mod
         LOGS.info("Successfully imported " + shortname)
 
 
@@ -89,7 +89,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except BaseException:
-            name = f"userbot.plugins.{shortname}"
+            name = f"Speedo.plugins.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]

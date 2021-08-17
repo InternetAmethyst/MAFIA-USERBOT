@@ -9,7 +9,7 @@ from datetime import datetime
 from selenium import webdriver
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="screenshot (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="screenshot (.*)", allow_sudo=True))

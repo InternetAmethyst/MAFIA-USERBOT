@@ -30,11 +30,11 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_input_location
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from Speedo import BOTLOG, BOTLOG_CHATID
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
-from userbot.Config import Config
+from Speedo.cmdhelp import CmdHelp
+from Speedo.Config import Config
 
 # =================== CONSTANT ===================
 

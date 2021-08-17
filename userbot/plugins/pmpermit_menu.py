@@ -8,8 +8,8 @@ import asyncio
 
 from telethon import functions
 
-from userbot.plugins.sql_helper import pmpermit_sql as pmpermit_sql
-from userbot import ALIVE_NAME
+from Speedo.plugins.sql_helper import pmpermit_sql as pmpermit_sql
+from Speedo import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 PREV_REPLY_MESSAGE = {}

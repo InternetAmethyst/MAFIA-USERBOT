@@ -13,9 +13,9 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import Channel, Chat, InputPhoto, User
 
-from userbot import CMD_HELP, bot
-from userbot.utils import admin_cmd, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo import CMD_HELP, bot
+from Speedo.utils import admin_cmd, sudo_cmd
+from Speedo.cmdhelp import CmdHelp
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```The extension of the media entity is invalid.```"

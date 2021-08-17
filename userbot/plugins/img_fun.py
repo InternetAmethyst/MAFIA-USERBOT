@@ -7,8 +7,8 @@ from PIL import Image, ImageDraw, ImageFont
 import PIL.ImageOps
 
 from speedobot.utils import admin_cmd, sudo_cmd
-from userbot import CmdHelp, CMD_HELP, LOGS, bot as speedobot
-from userbot.helpers.functions import (
+from Speedo import CmdHelp, CMD_HELP, LOGS, bot as speedobot
+from Speedo.helpers.functions import (
     convert_toimage,
     convert_tosticker,
     flip_image,

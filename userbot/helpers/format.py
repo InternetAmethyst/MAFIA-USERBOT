@@ -1,5 +1,5 @@
-# credits goes to cat userbot
-# thanks to cat userbot
+# credits goes to cat Speedo
+# thanks to cat Speedo
 
 import datetime
 import re
@@ -9,7 +9,7 @@ from telethon.tl.tlobject import TLObject
 from telethon.tl.types import MessageEntityPre
 from telethon.utils import add_surrogate
 
-from userbot.helpers.functions import utc_to_local
+from Speedo.helpers.functions import utc_to_local
 
 
 def paste_text(text):

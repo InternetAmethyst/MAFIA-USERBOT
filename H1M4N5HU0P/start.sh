@@ -26,4 +26,4 @@ echo """
                                           @MAFIA_USERBOT
 """
 
-python3 -m userbot
+python3 -m Speedo

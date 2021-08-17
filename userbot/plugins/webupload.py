@@ -2,7 +2,7 @@
 import asyncio
 import time
 from speedobot.utils import admin_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern="webup ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)"

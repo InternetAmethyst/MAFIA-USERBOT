@@ -4,9 +4,9 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from userbot import ALIVE_NAME
+from Speedo import ALIVE_NAME
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 MAFIA_NAME = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 

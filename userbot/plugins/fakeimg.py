@@ -1,5 +1,5 @@
 import requests
-from userbot import CmdHelp
+from Speedo import CmdHelp
 from speedobot.utils import edit_or_reply, admin_cmd, sudo_cmd
 import os
 
@@ -21,4 +21,4 @@ async def _(event):
     fole = "MAFIABOT.jpg"
     await borg.send_file(event.chat_id, fole, caption=captin)
     await event.delete()
-    os.system("rm /root/userbot/MAFIABOT.jpg ")
+    os.system("rm /root/Speedo/MAFIABOT.jpg ")

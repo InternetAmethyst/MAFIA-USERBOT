@@ -8,8 +8,8 @@ import telethon.utils
 from telethon.errors import rpcbaseerrors
 
 from speedobot.utils import admin_cmd, sudo_cmd, errors_handler
-from userbot import bot as speedobot
-from userbot import BOTLOG, BOTLOG_CHATID
+from Speedo import bot as speedobot
+from Speedo import BOTLOG, BOTLOG_CHATID
 
 
 @speedobot.on(admin_cmd(outgoing=True, pattern="del$"))

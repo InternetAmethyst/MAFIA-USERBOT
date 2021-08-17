@@ -1,8 +1,8 @@
 # credits goes ro catbot
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot.Config import Config
-from userbot.utils import delete_speedo
+from Speedo.Config import Config
+from Speedo.utils import delete_speedo
 
 
 async def reply_id(event):

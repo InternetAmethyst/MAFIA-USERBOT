@@ -1,7 +1,7 @@
 """speedoBot Help Command"""
 
-from userbot import *
-from userbot import CMD_HELP
+from Speedo import *
+from Speedo import CMD_HELP
 from speedobot.utils import *
 
 

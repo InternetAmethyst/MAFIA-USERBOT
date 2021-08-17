@@ -3,9 +3,9 @@ from collections import deque
 
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot import *
+from Speedo import *
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 

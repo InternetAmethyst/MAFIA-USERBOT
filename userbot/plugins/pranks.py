@@ -20,8 +20,8 @@ import os
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from userbot import CMD_HELP
-from userbot.helpers.functions import (
+from Speedo import CMD_HELP
+from Speedo.helpers.functions import (
     convert_toimage,
     deEmojify,
     phcomment,
@@ -30,7 +30,7 @@ from userbot.helpers.functions import (
     trash,
 )
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 from . import *
 
 

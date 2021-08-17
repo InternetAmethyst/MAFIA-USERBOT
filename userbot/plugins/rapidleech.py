@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 from telethon.utils import get_inner_text
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 logger.info(Config.OPEN_LOAD_LOGIN)
 # https://t.me/RoseSupport/33801

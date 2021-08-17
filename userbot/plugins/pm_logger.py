@@ -9,10 +9,10 @@ from asyncio import sleep
 
 from telethon import events
 
-from userbot import BOTLOG, BOTLOG_CHATID, bot
-from userbot.Config import Config
+from Speedo import BOTLOG, BOTLOG_CHATID, bot
+from Speedo.Config import Config
 from speedobot.utils import admin_cmd, register
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.WARN

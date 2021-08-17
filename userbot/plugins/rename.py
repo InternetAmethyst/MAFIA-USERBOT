@@ -14,7 +14,7 @@ from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
@@ -217,7 +217,7 @@ async def _(event):
         )
 
 CmdHelp("rename").add_command(
-  "rename", "<reply to media> <new name>", "Renames the replied media and downloads it to userbot local storage"
+  "rename", "<reply to media> <new name>", "Renames the replied media and downloads it to Speedo local storage"
 ).add_command(
   "rnupload", "<reply to media> <new name>", "Renames the replied media and directly uploads it to the chat"
 ).add_command(

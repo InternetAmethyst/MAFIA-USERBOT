@@ -5,9 +5,9 @@ from telethon.errors import FloodWaitError
 from telethon.tl import functions
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 
-from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
+from Speedo import ALIVE_NAME, BIO_MSG, CMD_HELP
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "LEGENDARY AF MAFIABOT"
 DEL_TIME_OUT = 60

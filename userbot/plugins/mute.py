@@ -3,8 +3,8 @@
 import asyncio
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
-from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from Speedo.cmdhelp import CmdHelp
+from Speedo.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 
 
 @bot.on(admin_cmd(pattern="mute ?(\d+)?", outgoing=True))

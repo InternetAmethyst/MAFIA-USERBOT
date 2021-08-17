@@ -6,8 +6,8 @@ from telethon import events
 from telethon import functions, types
 from telethon.tl.types import InputMessagesFilterDocument
 from speedobot.utils import *
-from userbot import *
-from userbot import bot as speedobot
+from Speedo import *
+from Speedo import bot as speedobot
 
 DELETE_TIMEOUT = 5
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
@@ -24,7 +24,7 @@ async def send(event):
     thumb = speedo_logo
     input_str = event.pattern_match.group(1)
     omk = f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded by ≈** {speedo}\n\n⚡ **[LEGENDARY AF MAFIABOT](t.me/speedoBot_Support)** ⚡"
-    the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
+    the_plugin_file = "./Speedo/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
         lauda = await event.client.send_file(
             event.chat_id,
@@ -53,7 +53,7 @@ async def install(event):
         try:
             downloaded_file_name = await event.client.download_media(  # pylint:disable=E0602
                 await event.get_reply_message(),
-                "./userbot/plugins/"  # pylint:disable=E0602
+                "./Speedo/plugins/"  # pylint:disable=E0602
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
@@ -86,7 +86,7 @@ async def uninstall(h1m4n5hu0p):
     if h1m4n5hu0p.fwd_from:
         return
     shortname = h1m4n5hu0p.pattern_match["shortname"]
-    dir_path =f"./userbot/plugins/{shortname}.py"
+    dir_path =f"./Speedo/plugins/{shortname}.py"
     try:
         remove_plugin(shortname)
         os.remove(dir_path)
@@ -130,15 +130,15 @@ async def load(event):
         )
 
 CmdHelp("core").add_command(
-  "install", "<reply to a .py file>", "Installs the replied python file if suitable to userbot codes. (TEMPORARILY DISABLED AS HACKERS MAKE YOU INSTALL SOME PLUGINS AND GET YOUR DATA)"
+  "install", "<reply to a .py file>", "Installs the replied python file if suitable to Speedo codes. (TEMPORARILY DISABLED AS HACKERS MAKE YOU INSTALL SOME PLUGINS AND GET YOUR DATA)"
 ).add_command(
-  "uninstall", "<plugin name>", "Uninstalls the given plugin from userbot. To get that again do .restart", "uninstall alive"
+  "uninstall", "<plugin name>", "Uninstalls the given plugin from Speedo. To get that again do .restart", "uninstall alive"
 ).add_command(
-  "load", "<plugin name>", "Loades the unloaded plugin to your userbot", "load alive"
+  "load", "<plugin name>", "Loades the unloaded plugin to your Speedo", "load alive"
 ).add_command(
-  "unload", "<plugin name>", "Unloads the plugin from your userbot", "unload alive"
+  "unload", "<plugin name>", "Unloads the plugin from your Speedo", "unload alive"
 ).add_command(
-  "send", "<file name>", "Sends the given file from your userbot server, if any.", "send alive"
+  "send", "<file name>", "Sends the given file from your Speedo server, if any.", "send alive"
 ).add_command(
   "cmds", None, "Gives out the list of modules in speedobot."
 ).add()

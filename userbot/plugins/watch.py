@@ -8,7 +8,7 @@
 from justwatch import JustWatch
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 
 def get_stream_data(query):

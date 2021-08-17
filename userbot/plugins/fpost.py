@@ -3,9 +3,9 @@ import string
 from telethon.tl.types import Channel
 
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import CMD_HELP
-from userbot.cmdhelp import CmdHelp
-from userbot.Config import Config
+from Speedo import CMD_HELP
+from Speedo.cmdhelp import CmdHelp
+from Speedo.Config import Config
 
 global msg_cache
 msg_cache = {}

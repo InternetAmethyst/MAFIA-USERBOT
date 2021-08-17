@@ -1,15 +1,15 @@
-# credits goes to cat userbot
-# thanks to cat userbot
+# credits goes to cat Speedo
+# thanks to cat Speedo
 
 import base64
 from asyncio import sleep
 
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import BOTLOG, BOTLOG_CHATID
-from userbot.helpers.format import parse_pre
-from userbot.plugins.sql_helper import broadcast_sql as sql
-from userbot.cmdhelp import CmdHelp
+from Speedo import BOTLOG, BOTLOG_CHATID
+from Speedo.helpers.format import parse_pre
+from Speedo.plugins.sql_helper import broadcast_sql as sql
+from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="sendto(?: |$)(.*)", command="sendto"))
 @bot.on(sudo_cmd(pattern="sendto(?: |$)(.*)", command="sendto", allow_sudo=True))

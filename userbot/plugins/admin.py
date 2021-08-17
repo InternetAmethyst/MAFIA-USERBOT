@@ -29,10 +29,10 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import *
-from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from Speedo import *
+from Speedo.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 from speedobot.utils import *
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 # =================== CONSTANT ===================
 

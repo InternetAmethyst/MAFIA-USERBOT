@@ -11,7 +11,7 @@ import re
 import bs4
 import requests
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 langi = "en"
 

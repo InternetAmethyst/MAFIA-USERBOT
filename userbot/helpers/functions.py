@@ -1,8 +1,8 @@
 # Making it easy....
 # thanks to @ranger_op for idea
 # codes by @mrconfused
-# catuserbot
-# thanks to catuserbot
+# catSpeedo
+# thanks to catSpeedo
 import os
 
 try:

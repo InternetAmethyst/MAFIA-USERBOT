@@ -11,9 +11,9 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import SendMediaRequest
 
 from speedobot.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
-from userbot import CMD_HELP
-from userbot.helpers.functions import unzip
-from userbot.cmdhelp import CmdHelp
+from Speedo import CMD_HELP
+from Speedo.helpers.functions import unzip
+from Speedo.cmdhelp import CmdHelp
 
 if not os.path.isdir("./temp"):
     os.makedirs("./temp")

@@ -6,8 +6,8 @@ import time
 from datetime import datetime
 
 from speedobot.utils import admin_cmd, sudo_cmd, progress
-from userbot import CMD_HELP
-from userbot.cmdhelp import CmdHelp
+from Speedo import CMD_HELP
+from Speedo.cmdhelp import CmdHelp
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/speedobot.media.ffmpeg"
 

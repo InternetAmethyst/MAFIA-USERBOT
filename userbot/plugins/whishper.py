@@ -1,7 +1,7 @@
 # Made by @Kraken_The_BadASS for @speedoBot_Official
 
 from speedobot.utils import *
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern="wspr ?(.*)"))

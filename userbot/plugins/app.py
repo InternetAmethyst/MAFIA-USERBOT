@@ -6,9 +6,9 @@
 import bs4
 import requests
 
-from userbot import ALIVE_NAME, CMD_HELP
+from Speedo import ALIVE_NAME, CMD_HELP
 from speedobot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "speedo User"
 

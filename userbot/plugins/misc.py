@@ -11,7 +11,7 @@ from random import randint
 from time import sleep
 
 from speedobot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern="random", outgoing=True))
@@ -32,7 +32,7 @@ async def randomise(items):
 @bot.on(admin_cmd(pattern="sleep([0-9]+)?$", outgoing=True))
 @bot.on(sudo_cmd(pattern="sleep([0-9]+)?$", allow_sudo=True))
 async def sleepybot(time):
-    """ For .sleep command, let the userbot snooze for a few second. """
+    """ For .sleep command, let the Speedo snooze for a few second. """
     message = time.text
     if not message[0].isalpha() and message[0] not in ("/", "#", "@", "!"):
         if " " not in time.pattern_match.group(1):
@@ -49,7 +49,7 @@ async def sleepybot(time):
             sleep(counter)
 
 CmdHelp("misc").add_command(
-  "sleep", "<value>", "Lets the userbot sleep for some seconds...."
+  "sleep", "<value>", "Lets the Speedo sleep for some seconds...."
 ).add_command(
   "random", "<reply>", "Chooses a random thing from the given list of things"
 ).add()

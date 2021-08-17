@@ -7,7 +7,7 @@ Available Commands:
 import asyncio
 
 from speedobot.utils import admin_cmd
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="emoji (.*)"))
 async def _(event):

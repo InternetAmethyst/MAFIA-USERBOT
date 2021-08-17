@@ -9,7 +9,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 
-from userbot.cmdhelp import CmdHelp
+from Speedo.cmdhelp import CmdHelp
 from speedobot.utils import humanbytes, admin_cmd
 
 

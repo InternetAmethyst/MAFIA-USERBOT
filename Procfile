@@ -1,1 +1,1 @@
-userbot: python -m userbot
+Speedo: python -m Speedo
